@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image';
 import React, { useEffect, useRef } from 'react'
 import Typed from 'typed.js'
 
@@ -24,7 +23,7 @@ const Banner = () => {
         <>
             <div className='md:w-1/2 sm:w-1/2 sm:px-0 px-5 w-full relative'>
                 <div className='overflow-hidden w-full rounded-full outline outline-4 outline-white/70  border-8 border-transparent border-opacity-30 mx-auto mb-5'>
-                    <Image src="/Dp.jpg" width={500} height={500} alt='Dp' className='w-full rounded-full' />
+                    <img src="/Dp.jpg" alt='Dp' className='w-full rounded-full' />
                 </div>
             </div>
             <div className='w-full md:text-left text-center'>
@@ -37,7 +36,7 @@ const Banner = () => {
                     <span className="text-orange-600" ref={el}></span>
                 </h3>
                 <p className='text-white/70 lg:text-base text-sm font-normal md:mb-7 mb-6 lg:w-[80%]'>Over 6 months of practical experience with a good knowledge in blockchain development.</p>
-                <a href={`http://localhost:3000/WaqasResume.pdf`} target='_blank' className='md:text-base text-sm text-white font-medium bg-orange-600 border-0 lg:py-3 md:py-2 py-3 md:px-5 px-4 focus:outline-none hover:bg-orange-700 rounded-md cursor-pointer'>Download CV</a>
+                <a href={`${process.env.NEXT_PUBLIC_WEB_URL}/WaqasResume.pdf`} target='_blank' className='md:text-base text-sm text-white font-medium bg-orange-600 border-0 lg:py-3 md:py-2 py-3 md:px-5 px-4 focus:outline-none hover:bg-orange-700 rounded-md cursor-pointer'>Download CV</a>
             </div>
         </>
     )
