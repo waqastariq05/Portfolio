@@ -36,7 +36,7 @@ const Banner = () => {
                     <span className="text-orange-600" ref={el}></span>
                 </h3>
                 <p className='text-white/70 lg:text-base text-sm font-normal md:mb-7 mb-6 lg:w-[80%]'>Over 6 months of practical experience with a good knowledge in blockchain development.</p>
-                <a href={`${process.env.NEXT_PUBLIC_WEB_URL}/WaqasResume.pdf`} target='_blank' className='md:text-base text-sm text-white font-medium bg-orange-600 border-0 lg:py-3 md:py-2 py-3 md:px-5 px-4 focus:outline-none hover:bg-orange-700 rounded-md cursor-pointer'>Download CV</a>
+                <a href="/WaqasResume.pdf" target='_blank' className='md:text-base text-sm text-white font-medium bg-orange-600 border-0 lg:py-3 md:py-2 py-3 md:px-5 px-4 focus:outline-none hover:bg-orange-700 rounded-md cursor-pointer'>Download CV</a>
             </div>
         </>
     )
