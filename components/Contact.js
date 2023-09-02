@@ -48,10 +48,10 @@ const Contact = () => {
                         </div>
                     </div>
                     <div className="p-2 w-full">
-                        <button className='flex mx-auto text-white bg-orange-600 font-medium tracking-wide border-0 lg:py-3 md:py-2 py-3 md:px-8 px-4 focus:outline-none hover:bg-orange-700 rounded-md md:text-base text-sm cursor-pointer'>SEND</button>
+                        <button className='flex mx-auto text-black bg-orange-600 font-bold tracking-wide border-0 lg:py-[10px] md:py-2 py-[10px] md:px-8 px-4 focus:outline-none hover:bg-orange-700 rounded-md md:text-base text-sm cursor-pointer'>SEND</button>
                     </div>
                     <div className="flex flex-wrap items-center sm:justify-between justify-evenly mx-auto p-2 w-full pt-5 mt-5 border-t border-gray-200">
-                        <a className="text-base font-medium text-orange-600"><FontAwesomeIcon icon={faEnvelope} className='mr-1 text-lg relative -bottom-[2px]' /> waqastariq274@gmail.com</a>
+                        <p className="text-base font-medium text-orange-600"><FontAwesomeIcon icon={faEnvelope} className='mr-1 text-lg relative -bottom-[2px]' /> waqastariq274@gmail.com</p>
                         <p className="text-base text-white/70"><FontAwesomeIcon icon={faPhone} className='mr-1' /> +92 332-2018906</p>
                     </div>
                 </div>
