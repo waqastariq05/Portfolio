@@ -23,12 +23,6 @@ const Product = () => {
             cate: 3
         },
         {
-            slug: "fileSystem_app",
-            image: ["/Project/FileSystem/1.png"],
-            name: "File System App",
-            cate: 2
-        },
-        {
             slug: "amazonClone_app",
             image: ["/Project/Dappazon/1.png"],
             name: "Amazon Clone App",

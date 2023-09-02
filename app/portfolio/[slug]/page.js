@@ -18,14 +18,14 @@ const project = [
         desc: "Designing a gym app using React.js involves creating a user-friendly and intuitive interface that allows users to track their fitness routines, set goals, monitor progress, and access workout plans.",
         codeLink: "Gym_app_Design"
     },
-    {
-        slug: "fileSystem_app",
-        image: ["/Project/FileSystem/1.png"],
-        name: "File System App",
-        tags: ["JavaScript", "Bootstrap", "React JS", "Solidity", "Hardhat", "Ether JS", "IPFS"],
-        desc: "This Decentralize App is build by blockchain technology, where user can upload file just like an google drive, and also give access to other user. This app use React.JS as Front-end and hardhat or ether.js use for backend to interact with smart contract which is written in solidity.",
-        codeLink: "Dapp_File_System"
-    },
+    // {
+    //     slug: "fileSystem_app",
+    //     image: ["/Project/FileSystem/1.png"],
+    //     name: "File System App",
+    //     tags: ["JavaScript", "Bootstrap", "React JS", "Solidity", "Hardhat", "Ether JS", "IPFS"],
+    //     desc: "This Decentralize App is build by blockchain technology, where user can upload file just like an google drive, and also give access to other user. This app use React.JS as Front-end and hardhat or ether.js use for backend to interact with smart contract which is written in solidity.",
+    //     codeLink: "Dapp_File_System"
+    // },
     {
         slug: "amazonClone_app",
         image: ["/Project/Dappazon/1.png"],
