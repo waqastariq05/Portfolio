@@ -45,8 +45,8 @@ const Navbar = () => {
                 <ul className='flex md:flex-col w-full md:w-auto justify-between md:justify-center items-center gap-1 bg-white/10 backdrop-blur-sm shadow-lg md:rounded-full md:py-5 py-2 px-10 md:px-1'>
                     {navLink.map((nav, index) => {
                         return (
-                            <li>
-                                <Link className={`text-base hover:text-orange-600 transition-all duration-300 cursor-pointer p-3 group relative flex items-center ${nav.link === pathname && "text-orange-600"}`} aria-label={nav.name} href={nav.link} key={index}>
+                            <li key={index}>
+                                <Link className={`text-base hover:text-orange-600 transition-all duration-300 cursor-pointer p-3 group relative flex items-center ${nav.link === pathname && "text-orange-600"}`} aria-label={nav.name} href={nav.link}>
                                     <div className='absolute right-0 pr-14 hidden md:group-hover:flex'>
                                         <div className='bg-white/10 backdrop-blur-sm text-white text-sm font-medium tracking-wide capitalize relative flex items-center py-2 px-3 rounded-[3px]'>
                                             <span>{nav.name}</span>
