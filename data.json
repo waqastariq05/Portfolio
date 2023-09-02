@@ -1,0 +1,72 @@
+[
+    {
+        "name": "HTML 5",
+        "percent": "90%",
+        "cate": "front"
+    },
+    {
+        "name": "CSS 3",
+        "percent": "80%",
+        "cate": "front"
+    },
+    {
+        "name": "JavaScript",
+        "percent": "75%",
+        "cate": "front"
+    },
+    {
+        "name": "React JS",
+        "percent": "85%",
+        "cate": "front"
+    },
+    {
+        "name": "Express JS",
+        "percent": "75%",
+        "cate": "back"
+    },
+    {
+        "name": "Node JS",
+        "percent": "70%",
+        "cate": "back"
+    },
+    {
+        "name": "Mongodb",
+        "percent": "80%",
+        "cate": "back"
+    },
+    {
+        "name": "Strapi",
+        "percent": "90%",
+        "cate": "back"
+    },
+    {
+        "name": "Solidity",
+        "percent": "80%",
+        "cate": "blockchain"
+    },
+    {
+        "name": "Web3 JS",
+        "percent": "85%",
+        "cate": "blockchain"
+    },
+    {
+        "name": "Ether JS",
+        "percent": "80%",
+        "cate": "blockchain"
+    },
+    {
+        "name": "Hardhat",
+        "percent": "75%",
+        "cate": "blockchain"
+    },
+    {
+        "name": "Truffle",
+        "percent": "70%",
+        "cate": "blockchain"
+    },
+    {
+        "name": "Next JS",
+        "percent": "80%",
+        "cate": "front"
+    }
+]

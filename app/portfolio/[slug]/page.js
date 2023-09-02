@@ -1,5 +1,7 @@
-import ProjectDetail from "@/components/ProjectDetail";
-import Transition from "@/components/Transition";
+import dynamic from 'next/dynamic'
+const Transition = dynamic(() => import('../../../components/Transition'))
+const ProjectDetail = dynamic(() => import('../../../components/ProjectDetail'))
+
 import { Roboto } from 'next/font/google'
 
 const roboto = Roboto({

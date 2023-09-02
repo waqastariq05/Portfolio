@@ -24,7 +24,7 @@ const Contact = () => {
     };
 
     return (
-        <div className="lg:w-1/2 md:w-2/3 w-full mx-auto">
+        <div className="lg:w-1/2 md:w-2/3 w-full mx-auto sm:mt-0 mt-4">
             <form ref={form} onSubmit={sendEmail}>
                 <div className="flex flex-wrap -m-2">
                     <div className="p-2 md:w-1/2 w-full">

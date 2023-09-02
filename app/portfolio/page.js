@@ -1,7 +1,7 @@
-import Header from '@/components/Header'
-import Product from '@/components/Product'
-import Transition from '@/components/Transition'
-import React from 'react'
+import dynamic from 'next/dynamic'
+const Transition = dynamic(() => import('../../components/Transition'))
+const Header = dynamic(() => import('../../components/Header'))
+const Product = dynamic(() => import('../../components/Product'))
 
 const page = () => {
     return (

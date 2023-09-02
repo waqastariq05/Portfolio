@@ -1,11 +1,13 @@
-import Header from "@/components/Header"
+import dynamic from 'next/dynamic'
+const Transition = dynamic(() => import('../../components/Transition'))
+const Header = dynamic(() => import('../../components/Header'))
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faCubes,
     faDesktop,
     faFileContract
 } from "@fortawesome/free-solid-svg-icons";
-import Transition from "@/components/Transition";
 
 const page = () => {
     const service = [

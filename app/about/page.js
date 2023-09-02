@@ -1,6 +1,9 @@
-import Header from "@/components/Header"
-import About from "@/components/About";
-import Transition from "@/components/Transition";
+import dynamic from 'next/dynamic'
+const Header = dynamic(() => import('../../components/Header'))
+const About = dynamic(() => import('../../components/About'))
+const Transition = dynamic(() => import('../../components/Transition'))
+import data from '../../data.json'
+
 
 const page = async () => {
     const aboutData = [
@@ -8,20 +11,28 @@ const page = async () => {
             title: "education",
             info: [
                 {
+                    startDate: "2003",
+                    endDate: "2017",
+                    grade: "B Grade",
+                    institute: "Information Learning & Development",
+                    degree: "Matriculation",
+                    major: "Computer Science"
+                },
+                {
                     startDate: "2018",
                     endDate: "2021",
                     grade: "A Grade",
-                    institute: "Aligarh Institute",
+                    institute: "Aligarh Institute of technology",
                     degree: "Diploma",
                     major: "Information Technology"
                 },
                 {
                     startDate: "2021",
                     endDate: "present",
-                    grade: "3.67",
+                    grade: "3.67 CGPA",
                     institute: "Indus University",
                     degree: "Bachelor",
-                    major: "Computer Science"
+                    major: "bachelor of science in computer science"
                 }
             ]
         },
@@ -30,28 +41,30 @@ const page = async () => {
             info: [
                 {
                     date: "Sep 2021",
-                    grade: "A Grade",
-                    institute: "Aligarh Institute",
-                    type: "Diploma",
-                    name: "Information Technology",
-                    cerLink: ""
+                    institute: "freeCodeCamp",
+                    type: "Online",
+                    name: "responsive web design",
+                    cerLink: "https://www.freecodecamp.org/certification/fcc41179584-da97-4f97-8526-3ffd478f8c99/responsive-web-design"
+                },
+                {
+                    date: "May 2023",
+                    institute: "coursera",
+                    type: "Online",
+                    name: "Developing Back-End Apps with Node.js & Express",
+                    cerLink: "https://www.coursera.org/account/accomplishments/certificate/ZRYMV88XL5F3"
                 }
             ]
         },
         {
             title: "skills",
-            info: [
-                {
-                    name: "HTML 5"
-                }
-            ]
+            info: data
         }
     ]
 
     return (
         <div className="container mx-auto md:px-20 sm:px-10 px-5">
             <Transition />
-            <div className="flex justify-center flex-col gap-3 md:h-screen h-fit md:pb-10 pb-20 sm:pt-0 pt-5">
+            <div className="flex justify-center flex-col gap-3 h-fit md:pb-10 pb-20 md:pt-20 pt-3">
                 <Header title="About Us" text="Know about me" />
                 <About aboutData={aboutData} />
             </div>

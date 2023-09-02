@@ -1,6 +1,6 @@
-import Transition from '@/components/Transition'
 import dynamic from 'next/dynamic'
 const Banner = dynamic(() => import('../components/Banner'))
+const Transition = dynamic(() => import('../components/Transition'))
 
 export default async function Home() {
   return (

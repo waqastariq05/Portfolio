@@ -42,7 +42,7 @@ const Banner = () => {
                     <span className="text-orange-600" ref={el}></span>
                 </h3>
                 <p className='text-white/70 lg:text-base text-sm font-normal md:mb-7 mb-6 lg:w-[80%]'>Over 6 months of practical experience with a good knowledge in blockchain development.</p>
-                <a href="/WaqasResume.pdf" target='_blank' className='lg:text-lg md:text-base text-sm text-black tracking-wide font-bold bg-orange-600 border-0 lg:py-[10px] md:py-2 py-[10px] md:px-5 px-4 focus:outline-none hover:bg-orange-700 rounded-md cursor-pointer'>Resume <FontAwesomeIcon icon={faDownload} /></a>
+                <a href="/WaqasResume.pdf" target='_blank' className='lg:text-lg md:text-base text-sm text-white/80 tracking-wide font-semibold bg-orange-600 border-0 lg:py-[10px] md:py-2 py-[10px] md:px-5 px-4 focus:outline-none hover:bg-orange-700 rounded-md cursor-pointer'>Resume <FontAwesomeIcon icon={faDownload} /></a>
             </div>
         </>
     )

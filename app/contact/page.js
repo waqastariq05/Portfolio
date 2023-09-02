@@ -1,8 +1,7 @@
-import Contact from '@/components/Contact'
-import Header from '@/components/Header'
-import Transition from '@/components/Transition'
-
-
+import dynamic from 'next/dynamic'
+const Transition = dynamic(() => import('../../components/Transition'))
+const Header = dynamic(() => import('../../components/Header'))
+const Contact = dynamic(() => import('../../components/Contact'))
 
 const page = () => {
     return (
