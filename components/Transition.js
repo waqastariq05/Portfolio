@@ -1,12 +1,32 @@
+'use client'
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const Transition = () => {
     return (
-        <div>
-            <div className='main fixed top-0 bottom-0 left-0 right-0 h-screen z-30 bg-purple-800'></div>
-            <div className='main1 fixed top-0 bottom-0 left-0 right-0 h-screen z-20 bg-purple-700'></div>
-            <div className='main2 fixed top-0 bottom-0 left-0 right-0 h-screen z-10 bg-purple-600'></div>
-        </div>
+        <>
+            <motion.div
+                className='fixed top-0 right-full bottom-0 w-screen h-screen z-50 bg-purple-800'
+                initial={{ x: "100%", width: "100%" }}
+                animate={{ x: "0%", width: "0%" }}
+                exit={{ x: ["0%", "100%"], width: ["0%", "100%"] }}
+                transition={{ duration: 0.7, ease: "easeInOut" }}
+            />
+            <motion.div
+                className='fixed top-0 right-full bottom-0 w-screen h-screen z-40 bg-purple-700'
+                initial={{ x: "100%", width: "100%" }}
+                animate={{ x: "0%", width: "0%" }}
+                exit={{ x: ["0%", "100%"], width: ["0%", "100%"] }}
+                transition={{ delay: 0.2, duration: 0.7, ease: "easeInOut" }}
+            />
+            <motion.div
+                className='fixed top-0 right-full bottom-0 w-screen h-screen z-30 bg-purple-600'
+                initial={{ x: "100%", width: "100%" }}
+                animate={{ x: "0%", width: "0%" }}
+                exit={{ x: ["0%", "100%"], width: ["0%", "100%"] }}
+                transition={{ delay: 0.4, duration: 0.7, ease: "easeInOut" }}
+            />
+        </>
     )
 }
 

@@ -1,5 +1,6 @@
 import Header from "@/components/Header"
 import About from "@/components/About";
+import Transition from "@/components/Transition";
 
 const page = async () => {
     const aboutData = [
@@ -49,6 +50,7 @@ const page = async () => {
 
     return (
         <div className="container mx-auto md:px-20 sm:px-10 px-5">
+            <Transition />
             <div className="flex justify-center flex-col gap-3 md:h-screen h-fit md:pb-10 pb-20 sm:pt-0 pt-5">
                 <Header title="About Us" text="Know about me" />
                 <About aboutData={aboutData} />

@@ -1,15 +1,14 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Open_Sans } from 'next/font/google'
 import Navbar from '@/components/Navbar';
 import TopNav from '@/components/TopNav';
-import Transition from '@/components/Transition';
 
 // import Font Awesome CSS
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 
-const inter = Inter({ subsets: ['latin'] })
+const openSans = Open_Sans({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Waqas Tariq - Blockchain & Full Stack Developer',
@@ -19,8 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Transition />
+      <body className={openSans.className}>
         <TopNav />
         <Navbar />
         {children}
