@@ -71,7 +71,7 @@ export default function page({ params }) {
                             </div>
                             <div className="flex items-center justify-between">
                                 <span className="title-font font-normal lg:text-lg md:text-base sm:text-lg text-base text-white/70">Github:</span>
-                                <a href={`https://github.com/waqastariq05/${project.codeLink}`} className="md:text-base text-sm text-white font-medium bg-orange-600 border-0 py-2 md:px-5 px-6 focus:outline-none hover:bg-orange-700 rounded-md cursor-pointer flex ml-auto animate-pulse hover:animate-none" target="_blank">Code</a>
+                                <a href={`https://github.com/waqastariq05/${project.codeLink}`} className="md:text-base text-sm text-white font-medium bg-orange-600 border-0 py-2 md:px-5 px-6 focus:outline-none hover:bg-orange-700 rounded-md cursor-pointer flex ml-auto animate-pulse hover:animate-none" target="_blank" >Code</a>
                             </div>
                         </div>
                     )
