@@ -22,17 +22,17 @@ const TopNav = () => {
                     <Link href="/" className={`text-4xl text-White uppercase ${poppins.className}`}>Waqas<span className='text-orange-600'>.</span></Link>
                 </div>
                 <div className='flex items-center justify-center gap-4 cursor-pointer'>
-                    <a href='https://www.facebook.com/waqas.tariq05' target='_blank'>
-                        <FontAwesomeIcon icon={faFacebookF} className='text-xl text-orange-700 hover:text-orange-800 transition-all duration-300' />
+                    <a href='https://www.facebook.com/waqas.tariq05' aria-label="Facebook" target='_blank' className='hover:-translate-y-1 transition-all duration-300'>
+                        <FontAwesomeIcon icon={faFacebookF} className='text-xl text-orange-700' />
                     </a>
-                    <a href="https://github.com/waqastariq05" target='_blank'>
-                        <FontAwesomeIcon icon={faGithub} className='text-xl text-orange-700 hover:text-orange-800 transition-all duration-300' />
+                    <a href="https://github.com/waqastariq05" aria-label="Github" target='_blank' className='hover:-translate-y-1 transition-all duration-300'>
+                        <FontAwesomeIcon icon={faGithub} className='text-xl text-orange-700' />
                     </a>
-                    <a href="https://www.instagram.com/waqastariq274/" target='_blank'>
-                        <FontAwesomeIcon icon={faInstagram} className='text-xl text-orange-700 hover:text-orange-800 transition-all duration-300' />
+                    <a href="https://www.instagram.com/waqastariq274/" aria-label="Instagram" target='_blank' className='hover:-translate-y-1 transition-all duration-300'>
+                        <FontAwesomeIcon icon={faInstagram} className='text-xl text-orange-700' />
                     </a>
-                    <a href="https://www.linkedin.com/in/waqas-tariq-705a671bb/" target='_blank'>
-                        <FontAwesomeIcon icon={faLinkedin} className='text-xl text-orange-700 hover:text-orange-800 transition-all duration-300' />
+                    <a href="https://www.linkedin.com/in/waqas-tariq-705a671bb/" aria-label="Linkedin" target='_blank' className='hover:-translate-y-1 transition-all duration-300'>
+                        <FontAwesomeIcon icon={faLinkedin} className='text-xl text-orange-700' />
                     </a>
                 </div>
             </nav>
