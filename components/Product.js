@@ -15,9 +15,9 @@ const roboto = Roboto({
 })
 
 // Images
-import gymApp from '../../../public/Project/GymApp/1.png'
-import amazonApp from '../../../public/Project/Dappazon/1.png'
-import foodApp from '../../../public/Project/FoodApp/1.png'
+import gymApp from '../public/Project/GymApp/1.png'
+import amazonApp from '../public/Project/Dappazon/1.png'
+import foodApp from '../public/Project/FoodApp/1.png'
 
 const Product = () => {
     const project = [
