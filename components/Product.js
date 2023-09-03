@@ -85,7 +85,7 @@ const Product = () => {
                                 <Link href={`/portfolio/${pro.slug}`}>
                                     <div className="h-full rounded-md shadow-lg shadow-black border-4 border-purple-500 border-opacity-30 overflow-hidden relative cursor-pointer group">
                                         <div className='w-auto lg:h-64 md:h-52 sm:h-96 h-72 overflow-hidden'>
-                                            <Image src={pro.image[0]} alt={pro.slug} priority />
+                                            <Image src={pro.image[0]} alt={pro.slug} priority sizes="(min-width: 808px) 50vw, 100vw" className='w-full h-auto' />
                                         </div>
                                         <div className="absolute top-0 justify-center items-center h-full w-full bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300">
                                             <h1 className={`${roboto.className} title-font lg:text-2xl md:text-base sm:text-2xl text-xl font-bold capitalize tracking-wide text-white z-20 ml-8 my-5 opacity-0 -translate-x-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300`}>{pro.name}</h1>
