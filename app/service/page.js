@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic'
-const Transition = dynamic(() => import('../../components/Transition'))
 const Header = dynamic(() => import('../../components/Header'))
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -30,7 +29,6 @@ const page = () => {
 
     return (
         <div className="container mx-auto md:px-20 sm:px-10 px-5">
-            <Transition />
             <div className="flex justify-center flex-col gap-10 md:h-screen h-fit md:pb-10 pb-20 sm:pt-0 pt-5">
                 <Header title="my services" text="What i do" />
                 <div className="flex flex-wrap -m-4 lg:mr-12">

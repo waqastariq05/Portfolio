@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic'
-const Transition = dynamic(() => import('../../../components/Transition'))
 const ProjectDetail = dynamic(() => import('../../../components/ProjectDetail'))
 
 import gymApp from '../../../public/Project/GymApp/1.png'
@@ -61,7 +60,6 @@ export default function page({ params }) {
 
     return (
         <div className="container mx-auto md:px-20 sm:px-10 px-5">
-            <Transition />
             <div div className="lg:w-4/5 mx-auto flex flex-wrap gap-y-10 items-center md:h-screen h-fit xl:pb-0 md:pb-10 pb-20 sm:pt-0 pt-5">
                 <ProjectDetail projectDetail={projectDetail} />
                 {projectDetail.map((project, i) => {

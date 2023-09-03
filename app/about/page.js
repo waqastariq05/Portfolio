@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic'
 const Header = dynamic(() => import('../../components/Header'))
 const About = dynamic(() => import('../../components/About'))
-const Transition = dynamic(() => import('../../components/Transition'))
 import data from '../../data.json'
 
 
@@ -63,7 +62,6 @@ const page = async () => {
 
     return (
         <div className="container mx-auto md:px-20 sm:px-10 px-5">
-            <Transition />
             <div className="flex justify-center flex-col gap-3 h-fit md:pb-10 pb-20 md:pt-20 pt-3">
                 <Header title="About Us" text="Know about me" />
                 <About aboutData={aboutData} />
