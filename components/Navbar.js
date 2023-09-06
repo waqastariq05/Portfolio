@@ -97,8 +97,10 @@ const Navbar = () => {
                         })}
                     </div>
                 </div>
-                <div className='lg:hidden flex items-center justify-start text-black text-2xl' onClick={handleToggle}>
-                    <FontAwesomeIcon icon={faBars} />
+                <div className='lg:hidden flex flex-col items-center justify-start group' onClick={handleToggle}>
+                    <span className={`bg-black/80 w-7 h-1 mb-1 rounded-sm group-hover:bg-black transition-all duration-200 ${toggle ? "rotate-[45deg]" : ""}`}></span>
+                    <span className={`bg-black/80 w-7 h-1 mb-1 rounded-sm group-hover:bg-black transition-all duration-200 ${toggle ? "absolute translate-x-2 opacity-0" : ""}`}></span>
+                    <span className={`bg-black/80 w-7 h-1 mb-1 rounded-sm group-hover:bg-black transition-all duration-200 ${toggle ? "relative rotate-[-45deg] bottom-2" : ""}`}></span>
                 </div>
             </div>
             <div className={`${toggle ? "scale-100" : "scale-0"} transition-all duration-200 fixed top-20 left-5 bottom-5 right-5 bg-black/90 backdrop-blur-sm rounded-lg z-30`}>
@@ -106,7 +108,7 @@ const Navbar = () => {
                     {navLink.map((nav, index) => {
                         return (
                             <Link className={`text-base text-white capitalize font-bold hover:text-white 
-                            transition-all duration-300 cursor-pointer p-1 my-1 ${nav.link === pathname && "text-white border-b-2 border-white"}`} aria-label={nav.name} href={nav.link} key={index}>{nav.name}  </Link>
+                            transition-all duration-300 cursor-pointer p-1 my-1 ${nav.link === pathname && "text-white border-b-2 border-white"}`} aria-label={nav.name} href={nav.link} onClick={handleToggle} key={index}>{nav.name}  </Link>
                         )
                     })}
                     <div className='flex items-center justify-center gap-5 cursor-pointer mt-7'>
