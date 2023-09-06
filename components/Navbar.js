@@ -108,10 +108,10 @@ const Navbar = () => {
                     {navLink.map((nav, index) => {
                         return (
                             <Link className={`text-base text-white capitalize font-bold hover:text-white 
-                            transition-all duration-300 cursor-pointer p-1 my-1 ${nav.link === pathname && "text-white border-b-2 border-white"}`} aria-label={nav.name} href={nav.link} onClick={handleToggle} key={index}>{nav.name}  </Link>
+                            transition-all duration-300 cursor-pointer p-1 my-2 ${nav.link === pathname && "text-white border-b-2 border-white"}`} aria-label={nav.name} href={nav.link} onClick={handleToggle} key={index}>{nav.name}  </Link>
                         )
                     })}
-                    <div className='flex items-center justify-center gap-5 cursor-pointer mt-7'>
+                    <div className='flex items-center justify-center gap-5 cursor-pointer mt-10'>
                         {icons.map((icon, i) => {
                             return (
                                 <a href={icon.link} aria-label={icon.name} target='_blank' className='hover:-translate-y-1 transition-all duration-300' key={i}>
