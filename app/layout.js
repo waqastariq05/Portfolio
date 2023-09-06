@@ -1,14 +1,15 @@
 import './globals.css'
-import { Open_Sans } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import Navbar from '@/components/Navbar';
 import TopNav from '@/components/TopNav';
 
 // import Font Awesome CSS
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import Footer from '@/components/Footer';
 config.autoAddCss = false;
 
-const openSans = Open_Sans({ subsets: ['latin'] })
+const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Waqas Tariq - Blockchain & Full Stack Developer',
@@ -18,10 +19,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={openSans.className}>
-        <TopNav />
+      <body className={montserrat.className}>
+        {/* <TopNav /> */}
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html >
   )

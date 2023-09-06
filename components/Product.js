@@ -68,7 +68,7 @@ const Product = () => {
 
     return (
         <>
-            <div className="flex mx-auto flex-wrap justify-center gap-y-2 mb-10 lg:mt-0 mt-5 cursor-pointer">
+            <div className="flex mx-auto flex-wrap justify-center gap-y-2 md:mb-10 mb-5 lg:mt-0 mt-5 cursor-pointer">
                 {category.map((item) => {
                     return (
                         <div key={item.id} className='navTab' onClick={change}>
@@ -83,13 +83,13 @@ const Product = () => {
                         return (
                             <div className="p-4 md:w-1/3 productCard" key={i}>
                                 <Link href={`/portfolio/${pro.slug}`}>
-                                    <div className="h-full rounded-md shadow-lg shadow-black border-4 border-purple-500 border-opacity-30 overflow-hidden relative cursor-pointer group">
-                                        <div className='w-auto lg:h-64 md:h-52 sm:h-96 h-72 overflow-hidden'>
+                                    <div className="h-full rounded-sm shadow-md shadow-black/50 border-4 border-purple-500 border-opacity-30 overflow-hidden relative cursor-pointer group">
+                                        <div className='w-auto lg:h-64 md:h-52 sm:h-96 h-72 overflow-hidden rounded-sm'>
                                             <Image src={pro.image[0]} alt={pro.slug} priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" loading='eager' />
                                         </div>
                                         <div className="absolute top-0 justify-center items-center h-full w-full bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300">
                                             <h1 className={`${roboto.className} title-font lg:text-2xl md:text-base sm:text-2xl text-xl font-bold capitalize tracking-wide text-white z-20 ml-8 my-5 opacity-0 -translate-x-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300`}>{pro.name}</h1>
-                                            <FontAwesomeIcon icon={faMagnifyingGlass} className='bg-white text-orange-600 text-lg p-3 rounded-full absolute right-5 bottom-5 opacity-0 translate-x-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300' />
+                                            <FontAwesomeIcon icon={faMagnifyingGlass} className='bg-white text-purple-700 text-lg p-3 rounded-full absolute right-5 bottom-5 opacity-0 translate-x-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300' />
                                         </div>
                                     </div>
                                 </Link>
@@ -100,13 +100,13 @@ const Product = () => {
                     return (
                         <div className="p-4 md:w-1/3 productCard" key={i}>
                             <Link href={`/portfolio/${pro.slug}`}>
-                                <div className="h-full rounded-md shadow-lg shadow-black border-4 border-purple-500 border-opacity-30 overflow-hidden relative cursor-pointer group">
-                                    <div className='w-auto lg:h-64 md:h-52 sm:h-96 h-72 overflow-hidden'>
-                                        <Image src={pro.image[0]} alt={pro.slug} />
+                                <div className="h-full rounded-sm shadow-md shadow-black/50 border-4 border-purple-500 border-opacity-30 overflow-hidden relative cursor-pointer group">
+                                    <div className='w-auto lg:h-64 md:h-52 sm:h-96 h-72 overflow-hidden rounded-sm'>
+                                        <Image src={pro.image[0]} alt={pro.slug} priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" loading='eager' />
                                     </div>
                                     <div className="absolute top-0 justify-center items-center h-full w-full bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300">
                                         <h1 className={`${roboto.className} title-font lg:text-2xl md:text-base sm:text-2xl text-xl font-bold capitalize tracking-wide text-white z-20 ml-8 my-5 opacity-0 -translate-x-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300`}>{pro.name}</h1>
-                                        <FontAwesomeIcon icon={faMagnifyingGlass} className='bg-white text-orange-600 text-lg p-3 rounded-full absolute right-5 bottom-5 opacity-0 translate-x-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300' />
+                                        <FontAwesomeIcon icon={faMagnifyingGlass} className='bg-white text-purple-700 text-lg p-3 rounded-full absolute right-5 bottom-5 opacity-0 translate-x-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300' />
                                     </div>
                                 </div>
                             </Link>

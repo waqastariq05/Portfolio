@@ -3,64 +3,127 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    faHome,
-    faUser,
-    faListCheck,
-    faProjectDiagram,
-    faEnvelope
+    faGithub,
+    faFacebookF,
+    faLinkedin,
+    faInstagram
+} from "@fortawesome/free-brands-svg-icons";
+
+import {
+    faMoon,
+    faBars
 } from "@fortawesome/free-solid-svg-icons";
+import { useState } from 'react';
 
 const Navbar = () => {
     const pathname = usePathname()
     const navLink = [
         {
-            icon: faHome,
             name: "home",
             link: "/"
         },
         {
-            icon: faUser,
             name: "about",
             link: "/about"
         },
         {
-            icon: faListCheck,
             name: "service",
             link: "/service"
         },
         {
-            icon: faProjectDiagram,
             name: "portfolio",
             link: "/portfolio"
         },
         {
-            icon: faEnvelope,
             name: "contact",
             link: "/contact"
         }
     ]
+
+    const icons = [
+        {
+            name: "Facebook",
+            icon: faFacebookF,
+            link: "https://www.facebook.com/waqas.tariq05",
+            color: "text-cyan-600"
+        },
+        {
+            name: "Github",
+            icon: faGithub,
+            link: "https://github.com/waqastariq05",
+            color: "text-black"
+        },
+        {
+            name: "Instagram",
+            icon: faInstagram,
+            link: "https://www.instagram.com/waqastariq274/",
+            color: "text-pink-700"
+        },
+        {
+            name: "Linkedin",
+            icon: faLinkedin,
+            link: "https://www.linkedin.com/in/waqas-tariq-705a671bb/",
+            color: "text-blue-600"
+        },
+    ]
+
+    const [toggle, setToggle] = useState(false);
+    const handleToggle = () => {
+        toggle ? setToggle(false) : setToggle(true)
+    }
+
     return (
-        <div>
-            <nav className="flex flex-col items-center md:justify-center gap-y-4 fixed md:right-5 top-0 bottom-0 h-max mt-auto w-full md:w-16 md:max-w-md md:h-screen z-30">
-                <ul className='flex md:flex-col w-full md:w-auto justify-between md:justify-center items-center gap-1 bg-white/10 backdrop-blur-sm shadow-lg md:rounded-full md:py-5 py-2 px-10 md:px-1'>
+
+        <header className="">
+            <div className="container mx-auto flex flex-wrap items-center lg:justify-start justify-between py-3 md:px-20 sm:px-10 px-5">
+                <nav className="lg:flex lg:w-2/5 hidden flex-wrap items-center">
                     {navLink.map((nav, index) => {
                         return (
-                            <li key={index}>
-                                <Link className={`text-base hover:text-orange-600 transition-all duration-300 cursor-pointer p-3 group relative flex items-center ${nav.link === pathname && "text-orange-600"}`} aria-label={nav.name} href={nav.link}>
-                                    <div className='absolute right-0 pr-14 hidden md:group-hover:flex'>
-                                        <div className='bg-white/10 backdrop-blur-sm text-white text-sm font-medium tracking-wide capitalize relative flex items-center py-2 px-3 rounded-[3px]'>
-                                            <span>{nav.name}</span>
-                                            <div className="border-solid border-l-white/10 backdrop-blur-sm border-l-8 border-y-transparent border-y-[6px] border-r-0 absolute -right-2"></div>
-                                        </div>
-                                    </div>
-                                    <FontAwesomeIcon icon={nav.icon} />
-                                </Link>
-                            </li>
+                            <Link className={`text-base text-black capitalize font-bold hover:text-black 
+                            transition-all duration-300 cursor-pointer p-1 mx-2 ${nav.link === pathname && "text-black border-b-2 border-black"}`} aria-label={nav.name} href={nav.link} key={index}>{nav.name}  </Link>
                         )
                     })}
-                </ul>
-            </nav>
-        </div>
+                </nav>
+                <a href='/' className="flex lg:w-1/5 items-center lg:items-center lg:justify-center cursor-pointer">
+                    <span className='bg-black text-white text-xl rounded-full py-4 px-3 font-bold tracking-wide hover:bg-purple-700 transition-all duration-300'>WT</span>
+                </a>
+                <div className="hidden lg:w-2/5 lg:inline-flex lg:justify-end ml-5 lg:ml-0">
+                    <div className='flex items-center justify-center gap-7 cursor-pointer'>
+                        {icons.map((icon) => {
+                            return (
+                                <a href={icon.link} aria-label={icon.name} target='_blank' className='hover:-translate-y-1 transition-all duration-300'>
+                                    <FontAwesomeIcon icon={icon.icon} className={`text-2xl ${icon.color}`} />
+                                </a>
+                            )
+                        })}
+                        <span><FontAwesomeIcon icon={faMoon} className='text-2xl text-black' /></span>
+                    </div>
+                </div>
+                <div className='lg:hidden flex items-center justify-start text-black text-2xl' onClick={handleToggle}>
+                    <FontAwesomeIcon icon={faBars} />
+                </div>
+            </div>
+            <div className={`${toggle ? "scale-100" : "scale-0"} transition-all duration-200 fixed top-20 left-5 bottom-5 right-5 bg-black/90 backdrop-blur-sm rounded-lg z-30`}>
+                <nav className="flex items-center justify-center flex-col h-full">
+                    {navLink.map((nav, index) => {
+                        return (
+                            <Link className={`text-base text-white capitalize font-bold hover:text-white 
+                            transition-all duration-300 cursor-pointer p-1 my-1 ${nav.link === pathname && "text-white border-b-2 border-white"}`} aria-label={nav.name} href={nav.link} key={index}>{nav.name}  </Link>
+                        )
+                    })}
+                    <div className='flex items-center justify-center gap-5 cursor-pointer mt-7'>
+                        {icons.map((icon) => {
+                            return (
+                                <a href={icon.link} aria-label={icon.name} target='_blank' className='hover:-translate-y-1 transition-all duration-300'>
+                                    <FontAwesomeIcon icon={icon.icon} className={`text-2xl ${icon.name === "Github" ? "text-white" : icon.color}`} />
+                                </a>
+                            )
+                        })}
+                        <span><FontAwesomeIcon icon={faMoon} className='text-2xl text-white' /></span>
+                    </div>
+                </nav>
+            </div>
+        </header>
     )
 }
 

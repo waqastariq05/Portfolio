@@ -1,33 +1,23 @@
 [
     {
-        "name": "HTML 5",
+        "name": "HTML + CSS",
         "percent": "90%",
-        "cate": "front"
-    },
-    {
-        "name": "CSS 3",
-        "percent": "80%",
-        "cate": "front"
+        "cate": "web"
     },
     {
         "name": "JavaScript",
         "percent": "75%",
-        "cate": "front"
+        "cate": "web"
     },
     {
         "name": "React JS",
         "percent": "85%",
-        "cate": "front"
+        "cate": "web"
     },
     {
-        "name": "Express JS",
-        "percent": "75%",
-        "cate": "back"
-    },
-    {
-        "name": "Node JS",
-        "percent": "70%",
-        "cate": "back"
+        "name": "Express JS + Node JS",
+        "percent": "80%",
+        "cate": "web"
     },
     {
         "name": "Mongodb",
@@ -41,22 +31,17 @@
     },
     {
         "name": "Solidity",
-        "percent": "80%",
-        "cate": "blockchain"
-    },
-    {
-        "name": "Web3 JS",
         "percent": "85%",
         "cate": "blockchain"
     },
     {
-        "name": "Ether JS",
+        "name": "Web3 JS",
         "percent": "80%",
         "cate": "blockchain"
     },
     {
-        "name": "Hardhat",
-        "percent": "75%",
+        "name": "Ether JS",
+        "percent": "85%",
         "cate": "blockchain"
     },
     {
@@ -65,8 +50,13 @@
         "cate": "blockchain"
     },
     {
+        "name": "Hardhat",
+        "percent": "75%",
+        "cate": "blockchain"
+    },
+    {
         "name": "Next JS",
         "percent": "80%",
-        "cate": "front"
+        "cate": "web"
     }
 ]

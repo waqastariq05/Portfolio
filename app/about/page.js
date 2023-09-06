@@ -62,8 +62,7 @@ const page = async () => {
 
     return (
         <div className="container mx-auto md:px-20 sm:px-10 px-5">
-            <div className="flex justify-center flex-col gap-3 h-fit md:pb-10 pb-20 md:pt-20 pt-3">
-                <Header title="About Us" text="Know about me" />
+            <div className="flex justify-center flex-col gap-3 md:pb-10 pb-20 md:pt-10 pt-2">
                 <About aboutData={aboutData} />
             </div>
         </div>

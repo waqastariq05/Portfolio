@@ -65,21 +65,21 @@ export default function page({ params }) {
                 {projectDetail.map((project, i) => {
                     return (
                         <div className="w-full md:w-1/2 lg:pl-10 md:pl-5 md:mt-0" key={i}>
-                            <h1 className={`${roboto.className} text-white lg:text-3xl md:text-2xl sm:text-3xl text-2xl title-font tracking-wide mb-4 capitalize`}>{project.name}</h1>
-                            <p className="leading-relaxed text-sm font-normal text-white/70">{project.desc}</p>
-                            <div className="mt-6 pb-5 border-b-2 border-gray-100 mb-5">
-                                <span className="title-font font-normal lg:text-lg md:text-base sm:text-lg text-base text-white/70">Technologies:</span>
+                            <h1 className={`${roboto.className} text-black lg:text-3xl md:text-2xl sm:text-3xl text-2xl title-font tracking-wide mb-4 capitalize`}>{project.name}</h1>
+                            <p className="leading-relaxed text-sm font-semibold text-black/70">{project.desc}</p>
+                            <div className="mt-6 pb-5 border-b-2 border-gray-300 mb-5">
+                                <span className="title-font font-semibold lg:text-lg md:text-base sm:text-lg text-base text-black/80">Technologies:</span>
                                 <div className="flex flex-wrap items-center justify-start gap-3 mt-3">
                                     {project.tags.map((tag, i) => {
                                         return (
-                                            <span className="text-sm font-normal border-2 border-solid border-orange-600 rounded-md py-2 px-3 hover:bg-orange-600 transition-all duration-300 cursor-pointer" key={i}>{tag}</span>
+                                            <span className="text-black text-sm font-semibold border-2 border-solid border-purple-700 rounded-md py-2 px-3 hover:bg-purple-700 transition-all duration-300 cursor-pointer" key={i}>{tag}</span>
                                         )
                                     })}
                                 </div>
                             </div>
                             <div className="flex items-center justify-between">
-                                <span className="title-font font-normal lg:text-lg md:text-base sm:text-lg text-base text-white/70">Github:</span>
-                                <a href={`https://github.com/waqastariq05/${project.codeLink}`} className="md:text-base text-sm text-white font-medium bg-orange-600 border-0 py-2 md:px-5 px-6 focus:outline-none hover:bg-orange-700 rounded-md cursor-pointer flex ml-auto animate-pulse hover:animate-none" target="_blank" >Code</a>
+                                <span className="title-font font-semibold lg:text-lg md:text-base sm:text-lg text-base text-black/80">Github:</span>
+                                <a href={`https://github.com/waqastariq05/${project.codeLink}`} className="md:text-base text-sm text-white tracking-wider font-semibold bg-black border-2 border-black py-2 md:px-5 px-6 focus:outline-none hover:bg-transparent hover:text-black transition-all duration-300 rounded-md cursor-pointer flex ml-auto animate-pulse hover:animate-none" target="_blank" >Code</a>
                             </div>
                         </div>
                     )

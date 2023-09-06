@@ -4,7 +4,35 @@
 
 body {
     color: #ffffff;
-    background-image: linear-gradient(130deg, #923cb5 0%, #000000 80%);
+    background-color: #ffffff;
+
+}
+
+.heroAnim {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: spin 10s infinite linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.heroAnim span {
+    position: absolute;
+    left: 50%;
+    top: -32px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: sans-serif;
+    transform-origin: 0 65px;
 }
 
 
