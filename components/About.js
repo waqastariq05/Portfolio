@@ -77,7 +77,7 @@ const About = (props) => {
                                         <h2 className="lg:text-base md:text-sm text-base text-black font-semibold mb-2">{skill.name}</h2>
                                         <h2 className="lg:text-base md:text-sm text-base text-black font-semibold mb-2 relative -right-5">{skill.percent}</h2>
                                     </motion.div>
-                                    <div className='h-2 w-full bg-slate-300 rounded-md relative'><motion.span className='absolute h-2 bg-purple-700 rounded-md'
+                                    <div className='h-2 w-full bg-slate-300 rounded-md relative'><motion.span className='absolute h-2 bg-purple-700 rounded-md' style={{ width: skill.percent }}
                                         initial={{ opacity: 0, width: 0 }}
                                         whileInView={{ opacity: 1, width: skill.percent }}
                                         transition={{ duration: 0.5, delay: 0.4 }}
@@ -103,7 +103,7 @@ const About = (props) => {
                                         <h2 className="lg:text-base md:text-sm text-base text-black font-semibold mb-2">{skill.name}</h2>
                                         <h2 className="lg:text-base md:text-sm text-base text-black font-semibold mb-2 relative -right-5">{skill.percent}</h2>
                                     </motion.div>
-                                    <div className='h-2 w-full bg-slate-300 rounded-md relative'><motion.span className='absolute h-2 bg-purple-700 rounded-md'
+                                    <div className='h-2 w-full bg-slate-300 rounded-md relative'><motion.span className='absolute h-2 bg-purple-700 rounded-md' style={{ width: skill.percent }}
                                         initial={{ opacity: 0, width: 0 }}
                                         whileInView={{ opacity: 1, width: skill.percent }}
                                         transition={{ duration: 0.5, delay: 0.4 }}

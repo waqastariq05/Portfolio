@@ -14,8 +14,8 @@ const Service = (props) => {
                 {service.map((ser, i) => {
                     return (
                         <motion.div className="xl:w-1/3 md:w-1/2 md:p-4 sm:mb-0 mb-7" key={i}
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, scale: 0.5 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.3, duration: 0.5 }}
                         >
                             <div className="hover:shadow-md border-2 hover:shadow-black/40 border-black border-opacity-50 rounded-lg p-6 transition-all duration-300 cursor-pointer group">

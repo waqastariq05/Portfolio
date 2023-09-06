@@ -70,9 +70,9 @@ const Product = () => {
             <div className="flex mx-auto flex-wrap justify-center gap-y-2 md:mb-10 mb-5 lg:mt-0 mt-5 cursor-pointer">
                 {category.map((item) => {
                     return (
-                        <motion.div key={item.id} className='navTab' onClick={() => controls.start({ opacity: 1, scale: 1 })}>
+                        <div key={item.id} className='navTab'>
                             <NavTab item={item} itemIndex={item.id} index={index} setIndex={setIndex} />
-                        </motion.div>
+                        </div>
                     )
                 })}
             </div>
@@ -101,11 +101,7 @@ const Product = () => {
                     })
                 ) : project.filter(e => { return e.cate === index }).reverse().map((pro, i) => {
                     return (
-                        <motion.div className="p-4 md:w-1/3" key={i}
-                            initial={{ opacity: 0, scale: 0.5 }}
-                            animate={controls}
-                            transition={{ duration: 0.5, delay: 0.2 }}
-                        >
+                        <div className="p-4 md:w-1/3" key={i}>
                             <Link href={`/portfolio/${pro.slug}`}>
                                 <div className="h-full rounded-sm shadow-md shadow-black/50 border-4 border-purple-500 border-opacity-30 overflow-hidden relative cursor-pointer group">
                                     <div className='w-auto lg:h-64 md:h-52 sm:h-96 h-72 overflow-hidden rounded-sm'>
@@ -117,7 +113,7 @@ const Product = () => {
                                     </div>
                                 </div>
                             </Link>
-                        </motion.div>
+                        </div>
                     )
                 })}
             </div >
