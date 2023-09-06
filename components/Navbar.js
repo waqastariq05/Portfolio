@@ -89,9 +89,9 @@ const Navbar = () => {
                 </a>
                 <div className="hidden lg:w-2/5 lg:inline-flex lg:justify-end ml-5 lg:ml-0">
                     <div className='flex items-center justify-center gap-7 cursor-pointer'>
-                        {icons.map((icon) => {
+                        {icons.map((icon, i) => {
                             return (
-                                <a href={icon.link} aria-label={icon.name} target='_blank' className='hover:-translate-y-1 transition-all duration-300'>
+                                <a href={icon.link} aria-label={icon.name} target='_blank' className='hover:-translate-y-1 transition-all duration-300' key={i}>
                                     <FontAwesomeIcon icon={icon.icon} className={`text-2xl ${icon.color}`} />
                                 </a>
                             )
@@ -112,9 +112,9 @@ const Navbar = () => {
                         )
                     })}
                     <div className='flex items-center justify-center gap-5 cursor-pointer mt-7'>
-                        {icons.map((icon) => {
+                        {icons.map((icon, i) => {
                             return (
-                                <a href={icon.link} aria-label={icon.name} target='_blank' className='hover:-translate-y-1 transition-all duration-300'>
+                                <a href={icon.link} aria-label={icon.name} target='_blank' className='hover:-translate-y-1 transition-all duration-300' key={i}>
                                     <FontAwesomeIcon icon={icon.icon} className={`text-2xl ${icon.name === "Github" ? "text-white" : icon.color}`} />
                                 </a>
                             )
