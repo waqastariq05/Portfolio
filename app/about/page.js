@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic'
-const Header = dynamic(() => import('../../components/Header'))
 const About = dynamic(() => import('../../components/About'))
 import data from '../../data.json'
 

@@ -1,5 +1,7 @@
 'use client'
 import React, { useState } from 'react'
+import dynamic from 'next/dynamic'
+const Header = dynamic(() => import('./Header'))
 import Image from 'next/image'
 import Link from 'next/link'
 import { Roboto } from 'next/font/google'
@@ -18,6 +20,7 @@ const roboto = Roboto({
 import gymApp from '../public/Project/GymApp/1.png'
 import amazonApp from '../public/Project/Dappazon/1.png'
 import foodApp from '../public/Project/FoodApp/1.png'
+import { motion } from 'framer-motion'
 
 const Product = () => {
     const project = [
@@ -61,19 +64,15 @@ const Product = () => {
     ]
     const [index, setIndex] = useState(0);
 
-    const change = () => {
-        const proCard = document.querySelector(".productCard")
-        proCard.classList.toggle("active")
-    }
-
     return (
         <>
+            <Header title="my portfolio" text="Visit My Portfolio & Keep Your Feedback" />
             <div className="flex mx-auto flex-wrap justify-center gap-y-2 md:mb-10 mb-5 lg:mt-0 mt-5 cursor-pointer">
                 {category.map((item) => {
                     return (
-                        <div key={item.id} className='navTab' onClick={change}>
+                        <motion.div key={item.id} className='navTab' onClick={() => controls.start({ opacity: 1, scale: 1 })}>
                             <NavTab item={item} itemIndex={item.id} index={index} setIndex={setIndex} />
-                        </div>
+                        </motion.div>
                     )
                 })}
             </div>
@@ -81,7 +80,11 @@ const Product = () => {
                 {index === 0 ? (
                     project.slice(0).reverse().map((pro, i) => {
                         return (
-                            <div className="p-4 md:w-1/3 productCard" key={i}>
+                            <motion.div className="p-4 md:w-1/3" key={i}
+                                initial={{ opacity: 0, scale: 0.5 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.5, delay: 0.7 }}
+                            >
                                 <Link href={`/portfolio/${pro.slug}`}>
                                     <div className="h-full rounded-sm shadow-md shadow-black/50 border-4 border-purple-500 border-opacity-30 overflow-hidden relative cursor-pointer group">
                                         <div className='w-auto lg:h-64 md:h-52 sm:h-96 h-72 overflow-hidden rounded-sm'>
@@ -93,12 +96,16 @@ const Product = () => {
                                         </div>
                                     </div>
                                 </Link>
-                            </div>
+                            </motion.div>
                         )
                     })
                 ) : project.filter(e => { return e.cate === index }).reverse().map((pro, i) => {
                     return (
-                        <div className="p-4 md:w-1/3 productCard" key={i}>
+                        <motion.div className="p-4 md:w-1/3" key={i}
+                            initial={{ opacity: 0, scale: 0.5 }}
+                            animate={controls}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                        >
                             <Link href={`/portfolio/${pro.slug}`}>
                                 <div className="h-full rounded-sm shadow-md shadow-black/50 border-4 border-purple-500 border-opacity-30 overflow-hidden relative cursor-pointer group">
                                     <div className='w-auto lg:h-64 md:h-52 sm:h-96 h-72 overflow-hidden rounded-sm'>
@@ -110,7 +117,7 @@ const Product = () => {
                                     </div>
                                 </div>
                             </Link>
-                        </div>
+                        </motion.div>
                     )
                 })}
             </div >

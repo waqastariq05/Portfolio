@@ -10,7 +10,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 import {
-    faMoon,
     faBars
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from 'react';
@@ -79,8 +78,8 @@ const Navbar = () => {
                 <nav className="lg:flex lg:w-2/5 hidden flex-wrap items-center">
                     {navLink.map((nav, index) => {
                         return (
-                            <Link className={`text-base text-black capitalize font-bold hover:text-black 
-                            transition-all duration-300 cursor-pointer p-1 mx-2 ${nav.link === pathname && "text-black border-b-2 border-black"}`} aria-label={nav.name} href={nav.link} key={index}>{nav.name}  </Link>
+                            <Link className={`text-base text-black capitalize font-bold hover:text-purple-700 
+                            transition-all duration-300 cursor-pointer p-1 mx-2 ${nav.link === pathname && "text-purple-700 border-b-2 border-purple-700"}`} aria-label={nav.name} href={nav.link} key={index}>{nav.name}  </Link>
                         )
                     })}
                 </nav>
@@ -96,7 +95,6 @@ const Navbar = () => {
                                 </a>
                             )
                         })}
-                        <span><FontAwesomeIcon icon={faMoon} className='text-2xl text-black' /></span>
                     </div>
                 </div>
                 <div className='lg:hidden flex items-center justify-start text-black text-2xl' onClick={handleToggle}>
@@ -119,7 +117,6 @@ const Navbar = () => {
                                 </a>
                             )
                         })}
-                        <span><FontAwesomeIcon icon={faMoon} className='text-2xl text-white' /></span>
                     </div>
                 </nav>
             </div>
