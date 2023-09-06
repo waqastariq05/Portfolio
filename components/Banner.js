@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image';
 import profilePic from '../public/Dp.jpg'
+import para from '../public/para.png'
 import React, { useEffect, useRef } from 'react'
 import Typed from 'typed.js'
 import { delay, motion } from 'framer-motion';
@@ -21,14 +22,6 @@ const Banner = () => {
             typed.destroy();
         };
     }, []);
-
-    useEffect(() => {
-        const text = document.querySelector('.heroAnim p');
-        text.innerHTML = text.innerText.split('').map((char, i) =>
-            `<span style="transform: rotate(${i * 6.6}deg)">${char}</span>`
-        ).join("")
-    })
-
 
     // ========== Animation ================
     const quote = {
@@ -154,11 +147,13 @@ const Banner = () => {
                     whileInView="whileInView"
                 >Resume</motion.a>
             </div >
-            <motion.div className='lg:block hidden absolute right-28 bottom-20' variants={box} initial="initial" whileInView="whileInView">
-                <div className='heroAnim'>
-                    <p className='text-sm text-purple-700 font-semibold'>WEB DEVELOPER - DAPP DEVELOPER -</p>
+            <motion.div className='lg:flex hidden absolute right-14 bottom-2' variants={box} initial="initial" whileInView="whileInView">
+                <div className='relative flex justify-end'>
+                    <div className='absolute top-14 right-14 bg-black w-[65px] h-[65px] flex justify-center items-center rounded-full text-xs font-medium z-10'>Hire Me</div>
+                    <div className='w-[40%]'>
+                        <Image src={para} alt='Dp' className='w-full rounded-full paraImage -z-10' priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" loading='eager' />
+                    </div>
                 </div>
-                <div className='bg-black w-[65px] h-[65px] flex justify-center items-center rounded-full text-xs font-medium'>Hire Me</div>
             </motion.div>
         </>
     )

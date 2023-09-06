@@ -8,11 +8,8 @@ body {
 
 }
 
-.heroAnim {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    animation: spin 10s infinite linear;
+.paraImage {
+    animation: spin 8s infinite linear;
 }
 
 @keyframes spin {
