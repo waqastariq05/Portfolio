@@ -14,7 +14,8 @@ import {
 import { motion } from 'framer-motion'
 
 const About = (props) => {
-    const { aboutData } = props
+    const { education, certificate, skills } = props
+
     return (
         <>
             <Header title="About Us" text="Know about me" />
@@ -66,20 +67,20 @@ const About = (props) => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
                         >Development</motion.h2>
-                        {aboutData[2].info.filter(e => { return e.cate === 'web' }).map((skill, i) => {
+                        {skills.filter(e => { return e.category === 'web' }).map((skill, i) => {
                             return (
                                 <div className='lg:mb-6 md:mb-5 mb-6 sm:mx-3 mx-0' key={i}>
-                                    <motion.div className='flex justify-between' style={{ width: skill.percent }}
+                                    <motion.div className='flex justify-between' style={{ width: `${skill.percent}%` }}
                                         initial={{ opacity: 0 }}
                                         whileInView={{ opacity: 1 }}
                                         transition={{ duration: 0.5, delay: 0.5 }}
                                     >
                                         <h2 className="lg:text-base md:text-sm text-base text-black font-semibold mb-2">{skill.name}</h2>
-                                        <h2 className="lg:text-base md:text-sm text-base text-black font-semibold mb-2 relative -right-5">{skill.percent}</h2>
+                                        <h2 className="lg:text-base md:text-sm text-base text-black font-semibold mb-2 relative -right-5">{skill.percent}%</h2>
                                     </motion.div>
-                                    <div className='h-2 w-full bg-slate-300 rounded-md relative'><motion.span className='absolute h-2 bg-purple-700 rounded-md' style={{ width: skill.percent }}
+                                    <div className='h-2 w-full bg-slate-300 rounded-md relative'><motion.span className='absolute h-2 bg-purple-700 rounded-md' style={{ width: `${skill.percent}%` }}
                                         initial={{ opacity: 0, width: 0 }}
-                                        whileInView={{ opacity: 1, width: skill.percent }}
+                                        whileInView={{ opacity: 1, width: `${skill.percent}%` }}
                                         transition={{ duration: 0.5, delay: 0.4 }}
                                     ></motion.span></div>
                                 </div>
@@ -92,20 +93,20 @@ const About = (props) => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
                         >Blockchain</motion.h2>
-                        {aboutData[2].info.filter(e => { return e.cate === 'blockchain' }).map((skill, i) => {
+                        {skills.filter(e => { return e.category === 'blockchain' }).map((skill, i) => {
                             return (
                                 <div className="lg:mb-6 md:mb-5 mb-6 sm:mx-3 mx-0" key={i}>
-                                    <motion.div className='flex justify-between' style={{ width: skill.percent }}
+                                    <motion.div className='flex justify-between' style={{ width: `${skill.percent}%` }}
                                         initial={{ opacity: 0 }}
                                         whileInView={{ opacity: 1 }}
                                         transition={{ duration: 0.5, delay: 0.5 }}
                                     >
                                         <h2 className="lg:text-base md:text-sm text-base text-black font-semibold mb-2">{skill.name}</h2>
-                                        <h2 className="lg:text-base md:text-sm text-base text-black font-semibold mb-2 relative -right-5">{skill.percent}</h2>
+                                        <h2 className="lg:text-base md:text-sm text-base text-black font-semibold mb-2 relative -right-5">{skill.percent}%</h2>
                                     </motion.div>
-                                    <div className='h-2 w-full bg-slate-300 rounded-md relative'><motion.span className='absolute h-2 bg-purple-700 rounded-md' style={{ width: skill.percent }}
+                                    <div className='h-2 w-full bg-slate-300 rounded-md relative'><motion.span className='absolute h-2 bg-purple-700 rounded-md' style={{ width: `${skill.percent}%` }}
                                         initial={{ opacity: 0, width: 0 }}
-                                        whileInView={{ opacity: 1, width: skill.percent }}
+                                        whileInView={{ opacity: 1, width: `${skill.percent}%` }}
                                         transition={{ duration: 0.5, delay: 0.4 }}
                                     ></motion.span></div>
                                 </div>
@@ -123,10 +124,10 @@ const About = (props) => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
-                        >{aboutData[0].title}</motion.h2>
+                        >Education</motion.h2>
                         {/* ======================= Educations ================================= */}
                         <div className="flex flex-col items-center justify-center">
-                            {aboutData[0].info.slice(0).reverse().map((data, i) => {
+                            {education.slice(0).reverse().map((data, i) => {
                                 return (
                                     <div className='w-full' key={i}>
                                         <div className="flex relative lg:py-8 sm:py-5 py-1 items-center">
@@ -148,11 +149,11 @@ const About = (props) => {
                                                 transition={{ duration: 0.5, delay: 0.3 }}
                                             >
                                                 <div className="flex justify-between border-b-2 border-black border-opacity-50 pb-3 mb-4 font-semibold lg:text-base md:text-sm sm:text-base text-sm text-black/80">
-                                                    <span>{data.startDate + " - " + data.endDate}</span>
+                                                    <span>{new Date(data.startDate).toLocaleDateString(undefined, { year: 'numeric' }) + " - " + new Date(data.endDate).toLocaleDateString(undefined, { year: 'numeric' })}</span>
                                                     <span className="text-purple-700 font-semibold">{data.grade}</span>
                                                 </div>
                                                 <div className="">
-                                                    <h2 className="font-semibold text-black mb-3 lg:text-lg md:text-base sm:text-lg text-base capitalize">{data.institute} - <span className='lg:text-base md:text-sm sm:text-base text-sm text-black/70 italic font-semibold'>{data.degree}</span></h2>
+                                                    <h2 className="font-semibold text-black mb-3 lg:text-lg md:text-base sm:text-lg text-base capitalize">{data.instName} - <span className='lg:text-base md:text-sm sm:text-base text-sm text-black/70 italic font-semibold'>{data.degree}</span></h2>
                                                     <p className="leading-relaxed text-black/80 capitalize lg:text-base md:text-sm sm:text-base text-sm sm:mb-0 mb-5 font-semibold">{data.major}</p>
                                                 </div>
                                             </motion.div>
@@ -169,9 +170,9 @@ const About = (props) => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
-                        >{aboutData[1].title}</motion.h2>
+                        >Certification</motion.h2>
                         <div className="flex flex-col items-center justify-center">
-                            {aboutData[1].info.slice(0).reverse().map((data, i) => {
+                            {certificate.slice(0).reverse().map((data, i) => {
                                 return (
                                     <div className='w-full' key={i}>
                                         <div className="flex relative lg:py-8 sm:py-5 py-1 items-center">
@@ -193,13 +194,16 @@ const About = (props) => {
                                                 transition={{ duration: 0.5, delay: 0.3 }}
                                             >
                                                 <div className="flex justify-between border-b-2 border-black border-opacity-50 pb-3 mb-4 font-semibold lg:text-base md:text-sm sm:text-base text-sm text-black/80">
-                                                    <span>{data.date}</span>
+                                                    <span>{new Date(data.date).toLocaleDateString(undefined, {
+                                                        month: 'short',
+                                                        year: 'numeric'
+                                                    })}</span>
                                                     <span className="text-purple-700 font-semibold">
                                                         <a href={data.cerLink} target='_blank' className='uppercase lg:text-base md:text-sm sm:text-base text-sm'>View</a>
                                                     </span>
                                                 </div>
                                                 <div className="">
-                                                    <h2 className="font-semibold text-black mb-3 lg:text-xl md:text-base sm:text-xl text-base capitalize">{data.institute} - <span className='lg:text-xl md:text-sm sm:text-xl text-sm text-black/70 italic font-semibold'>{data.type}</span></h2>
+                                                    <h2 className="font-semibold text-black mb-3 lg:text-xl md:text-base sm:text-xl text-base capitalize">{data.instName} - <span className='lg:text-xl md:text-sm sm:text-xl text-sm text-black/70 italic font-semibold'>{data.type}</span></h2>
                                                     <p className="leading-relaxed text-black/80 capitalize lg:text-base md:text-sm sm:text-base text-sm sm:mb-0 mb-5 font-semibold">{data.name}</p>
                                                 </div>
                                             </motion.div>

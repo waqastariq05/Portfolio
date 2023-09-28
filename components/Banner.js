@@ -1,12 +1,13 @@
 'use client'
 import Image from 'next/image';
-import profilePic from '../public/Dp.jpg'
 import para from '../public/para.png'
 import React, { useEffect, useRef } from 'react'
 import Typed from 'typed.js'
-import { delay, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
-const Banner = () => {
+const Banner = (props) => {
+    const { profile } = props
+
     const el = useRef(null);
     useEffect(() => {
         const typed = new Typed(el.current, {
@@ -119,11 +120,11 @@ const Banner = () => {
                     initial="initial"
                     whileInView="whileInView"
                 >
-                    <Image src={profilePic} alt='Dp' className='w-full rounded-full' priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" loading='eager' />
+                    <Image src={profile[0].image} width={500} height={500} alt='Dp' className='w-full rounded-full' priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" loading='eager' />
                 </motion.div>
             </div>
             <div className='w-full md:text-left text-center'>
-                <motion.div className='whileInView-bounce text-sm font-semibold capitalize text-white bg-black tracking-wide rounded-md sm:py-2 py-3 px-5 w-28 text-center md:mx-0 mx-auto relative md:mb-5 mb-4'
+                <motion.div className='whileInView-bounce text-sm font-semibold capitalize text-white bg-black tracking-wide rounded-md sm:py-2 py-3 px-5 w-28 text-center md:mx-0 mx-auto relative md:mb-5 mb-4 animate-bounce delay-100'
                     variants={quote} initial="initial" whileInView="whileInView">
                     <span>Hi there!</span>
                     <div className="border-solid border-t-black border-t-8 border-x-transparent border-x-[9px] border-b-0 absolute -bottom-2 left-12"></div>
@@ -131,7 +132,7 @@ const Banner = () => {
                 <motion.h2 className='text-black lg:text-6xl md:text-5xl text-4xl font-bold mb-5 capitalize'
                     variants={heading}
                     initial="initial"
-                    whileInView="whileInView">i’m Waqas Tariq</motion.h2>
+                    whileInView="whileInView">i’m {profile[0].name}</motion.h2>
                 <motion.h3 className='text-purple-700 lg:text-3xl md:text-2xl text-xl font-bold lg:mb-7 mb-5'
                     variants={heading}
                     initial="initial"
@@ -140,8 +141,8 @@ const Banner = () => {
                 </motion.h3>
                 <motion.p className='text-black/80 lg:text-base text-sm font-semibold md:mb-10 mb-8 lg:w-[90%]'
                     variants={text} initial="initial" whileInView="whileInView"
-                >Over 6 months of practical experience with a good knowledge in blockchain development.</motion.p>
-                <motion.a href="/WaqasResume.pdf" target='_blank' className='md:text-base text-sm text-white tracking-wider font-semibold bg-black border-2 border-black lg:py-[10px] md:py-4 py-[10px] md:px-7 px-5 focus:outline-none hover:bg-transparent hover:text-black transition-all duration-300 rounded-md cursor-pointer'
+                >{profile[0].desc}</motion.p>
+                <motion.a href={profile[0].resume} target='_blank' className='md:text-base text-sm text-white tracking-wider font-semibold bg-black border-2 border-black lg:py-[10px] md:py-4 py-[10px] md:px-7 px-5 focus:outline-none hover:bg-transparent hover:text-black transition-all duration-300 rounded-md cursor-pointer'
                     variants={button}
                     initial="initial"
                     whileInView="whileInView"

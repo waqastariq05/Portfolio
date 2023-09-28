@@ -1,68 +1,55 @@
 import dynamic from 'next/dynamic'
 const About = dynamic(() => import('../../components/About'))
-import data from '../../data.json'
+import { createClient } from 'next-sanity';
 
+// Fetching Skills
+async function getSkills() {
+    const client = createClient({
+        projectId: "11f6lgwk",
+        dataset: "production",
+        apiVersion: "2022-03-25",
+        useCdn: true
+    });
+    const query = `*[_type == "skills"]{name, percent, category}`
+    const res = await client.fetch(query)
+    return { res }
+}
+
+// Fetching Education
+async function getEducation() {
+    const client = createClient({
+        projectId: "11f6lgwk",
+        dataset: "production",
+        apiVersion: "2022-03-25",
+        useCdn: true
+    });
+    const query = `*[_type == "education"]{instName, degree, major, grade, startDate, endDate}`
+    const res = await client.fetch(query)
+    return { res }
+}
+
+// Fetching Certification
+async function getCertificate() {
+    const client = createClient({
+        projectId: "11f6lgwk",
+        dataset: "production",
+        apiVersion: "2022-03-25",
+        useCdn: true
+    });
+    const query = `*[_type == "certificate"]{name, instName, type, cerLink, date}`
+    const res = await client.fetch(query)
+    return { res }
+}
 
 const page = async () => {
-    const aboutData = [
-        {
-            title: "education",
-            info: [
-                {
-                    startDate: "2003",
-                    endDate: "2017",
-                    grade: "B Grade",
-                    institute: "Information Learning & Development",
-                    degree: "Matriculation",
-                    major: "Computer Science"
-                },
-                {
-                    startDate: "2018",
-                    endDate: "2021",
-                    grade: "A Grade",
-                    institute: "Aligarh Institute of technology",
-                    degree: "Diploma",
-                    major: "Information Technology"
-                },
-                {
-                    startDate: "2021",
-                    endDate: "present",
-                    grade: "3.67 CGPA",
-                    institute: "Indus University",
-                    degree: "Bachelor",
-                    major: "bachelor of science in computer science"
-                }
-            ]
-        },
-        {
-            title: "certification",
-            info: [
-                {
-                    date: "Sep 2021",
-                    institute: "freeCodeCamp",
-                    type: "Online",
-                    name: "responsive web design",
-                    cerLink: "https://www.freecodecamp.org/certification/fcc41179584-da97-4f97-8526-3ffd478f8c99/responsive-web-design"
-                },
-                {
-                    date: "May 2023",
-                    institute: "coursera",
-                    type: "Online",
-                    name: "Developing Back-End Apps with Node.js & Express",
-                    cerLink: "https://www.coursera.org/account/accomplishments/certificate/ZRYMV88XL5F3"
-                }
-            ]
-        },
-        {
-            title: "skills",
-            info: data
-        }
-    ]
+    const education = await getEducation()
+    const certificate = await getCertificate()
+    const skills = await getSkills()
 
     return (
         <div className="container mx-auto md:px-20 sm:px-10 px-5">
             <div className="flex justify-center flex-col gap-3 md:pb-10 pb-20 md:pt-10 pt-2">
-                <About aboutData={aboutData} />
+                <About education={education.res} certificate={certificate.res} skills={skills.res} />
             </div>
         </div>
     )
