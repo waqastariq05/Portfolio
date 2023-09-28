@@ -37,7 +37,7 @@ async function getCategories() {
     return { res }
 }
 
-const page = async () => {
+export default async function page() {
     const project = await getProject()
     const category = await getCategories()
 
@@ -50,4 +50,4 @@ const page = async () => {
     )
 }
 
-export default page
+export const revalidate = 3000

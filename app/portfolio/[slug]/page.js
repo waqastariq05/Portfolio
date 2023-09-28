@@ -37,3 +37,5 @@ export default async function page({ params }) {
         </div >
     )
 }
+
+export const revalidate = 3000

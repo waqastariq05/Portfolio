@@ -41,7 +41,7 @@ async function getCertificate() {
     return { res }
 }
 
-const page = async () => {
+export default async function page() {
     const education = await getEducation()
     const certificate = await getCertificate()
     const skills = await getSkills()
@@ -55,4 +55,4 @@ const page = async () => {
     )
 }
 
-export default page
+export const revalidate = 3000
