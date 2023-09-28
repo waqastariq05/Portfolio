@@ -23,7 +23,7 @@ async function getEducation() {
         apiVersion: "2022-03-25",
         useCdn: false
     });
-    const query = `*[_type == "education"] | order(_createdAt asc){instName, degree, major, grade, startDate, endDate}`
+    const query = `*[_type == "education"] | order(_createdAt desc){instName, degree, major, grade, startDate, endDate}`
     const res = await client.fetch(query)
     return { res }
 }

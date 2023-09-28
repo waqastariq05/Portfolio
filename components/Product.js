@@ -40,7 +40,7 @@ const Product = (props) => {
             </motion.div>
             <div className="flex flex-wrap -m-4">
                 {index === 0 ? (
-                    project.slice(0).reverse().map((pro, i) => (
+                    project.map((pro, i) => (
                         <motion.div className="p-4 md:w-1/3" key={i}
                             initial={{ opacity: 0, scale: 0.5 }}
                             whileInView={{ opacity: 1, scale: 1 }}
@@ -59,7 +59,7 @@ const Product = (props) => {
                             </Link>
                         </motion.div>
                     ))
-                ) : project.filter(e => { return e.category._ref === index }).reverse().map((pro, i) => {
+                ) : project.filter(e => { return e.category._ref === index }).map((pro, i) => {
                     return (
                         <div className="p-4 md:w-1/3" key={i}>
                             <Link href={`/portfolio/${pro.slug}`}>

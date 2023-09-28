@@ -172,7 +172,7 @@ const About = (props) => {
                             transition={{ duration: 0.5, delay: 0.2 }}
                         >Certification</motion.h2>
                         <div className="flex flex-col items-center justify-center">
-                            {certificate.slice(0).reverse().map((data, i) => {
+                            {certificate.map((data, i) => {
                                 return (
                                     <div className='w-full' key={i}>
                                         <div className="flex relative lg:py-8 sm:py-5 py-1 items-center">
