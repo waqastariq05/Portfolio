@@ -8,7 +8,7 @@ async function getProfile() {
     projectId: "11f6lgwk",
     dataset: "production",
     apiVersion: "2022-03-25",
-    useCdn: true
+    useCdn: false
   });
   const query = `*[_type == "profile"]{
       name,

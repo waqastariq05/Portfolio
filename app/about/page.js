@@ -8,7 +8,7 @@ async function getSkills() {
         projectId: "11f6lgwk",
         dataset: "production",
         apiVersion: "2022-03-25",
-        useCdn: true
+        useCdn: false
     });
     const query = `*[_type == "skills"]{name, percent, category}`
     const res = await client.fetch(query)
@@ -21,7 +21,7 @@ async function getEducation() {
         projectId: "11f6lgwk",
         dataset: "production",
         apiVersion: "2022-03-25",
-        useCdn: true
+        useCdn: false
     });
     const query = `*[_type == "education"]{instName, degree, major, grade, startDate, endDate}`
     const res = await client.fetch(query)
@@ -34,7 +34,7 @@ async function getCertificate() {
         projectId: "11f6lgwk",
         dataset: "production",
         apiVersion: "2022-03-25",
-        useCdn: true
+        useCdn: false
     });
     const query = `*[_type == "certificate"]{name, instName, type, cerLink, date}`
     const res = await client.fetch(query)
