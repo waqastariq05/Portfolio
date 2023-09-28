@@ -19,9 +19,6 @@ const roboto = Roboto({
 const Product = (props) => {
     const { project, category } = props
 
-    // console.log(project[0].category)
-    // console.log("id: ", category[0]._id)
-
     const [index, setIndex] = useState(0);
 
     return (
@@ -43,7 +40,7 @@ const Product = (props) => {
             </motion.div>
             <div className="flex flex-wrap -m-4">
                 {index === 0 ? (
-                    project.map((pro, i) => (
+                    project.slice(0).reverse().map((pro, i) => (
                         <motion.div className="p-4 md:w-1/3" key={i}
                             initial={{ opacity: 0, scale: 0.5 }}
                             whileInView={{ opacity: 1, scale: 1 }}

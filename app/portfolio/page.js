@@ -10,7 +10,7 @@ async function getProject() {
         apiVersion: "2022-03-25",
         useCdn: false
     });
-    const query = `*[_type == "project"]{
+    const query = `*[_type == "project"] | order(_createdAt desc){
         name,
         "slug": slug.current,
         category,
@@ -32,7 +32,7 @@ async function getCategories() {
         apiVersion: "2022-03-25",
         useCdn: false
     });
-    const query = `*[_type == "projectCate"]{_id, name}`
+    const query = `*[_type == "projectCate"] | order(_createdAt desc){_id, name}`
     const res = await client.fetch(query)
     return { res }
 }
@@ -43,7 +43,7 @@ export default async function page() {
 
     return (
         <div className="container mx-auto md:px-20 sm:px-10 px-5">
-            <div className="flex justify-center flex-col md:gap-10 gap-5 md:h-screen h-fit mx-auto sm:pb-20 pb-0 sm:my-0 mt-2 mb-14">
+            <div className="flex justify-center flex-col md:gap-10 gap-5 mx-auto sm:pb-20 pb-0 sm:mt-8 sm:my-0 mt-3 mb-14">
                 <Product project={project.res} category={category.res} />
             </div >
         </div >

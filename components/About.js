@@ -75,7 +75,7 @@ const About = (props) => {
                                         whileInView={{ opacity: 1 }}
                                         transition={{ duration: 0.5, delay: 0.5 }}
                                     >
-                                        <h2 className="lg:text-base md:text-sm text-base text-black font-semibold mb-2">{skill.name}</h2>
+                                        <h2 className="lg:text-base md:text-sm text-base text-black font-semibold mb-2 sm:pl-2">{skill.name}</h2>
                                         <h2 className="lg:text-base md:text-sm text-base text-black font-semibold mb-2 relative -right-5">{skill.percent}%</h2>
                                     </motion.div>
                                     <div className='h-2 w-full bg-slate-300 rounded-md relative'><motion.span className='absolute h-2 bg-purple-700 rounded-md' style={{ width: `${skill.percent}%` }}
@@ -101,7 +101,7 @@ const About = (props) => {
                                         whileInView={{ opacity: 1 }}
                                         transition={{ duration: 0.5, delay: 0.5 }}
                                     >
-                                        <h2 className="lg:text-base md:text-sm text-base text-black font-semibold mb-2">{skill.name}</h2>
+                                        <h2 className="lg:text-base md:text-sm text-base text-black font-semibold mb-2 sm:pl-2">{skill.name}</h2>
                                         <h2 className="lg:text-base md:text-sm text-base text-black font-semibold mb-2 relative -right-5">{skill.percent}%</h2>
                                     </motion.div>
                                     <div className='h-2 w-full bg-slate-300 rounded-md relative'><motion.span className='absolute h-2 bg-purple-700 rounded-md' style={{ width: `${skill.percent}%` }}
@@ -127,7 +127,7 @@ const About = (props) => {
                         >Education</motion.h2>
                         {/* ======================= Educations ================================= */}
                         <div className="flex flex-col items-center justify-center">
-                            {education.slice(0).reverse().map((data, i) => {
+                            {education.map((data, i) => {
                                 return (
                                     <div className='w-full' key={i}>
                                         <div className="flex relative lg:py-8 sm:py-5 py-1 items-center">
@@ -149,7 +149,7 @@ const About = (props) => {
                                                 transition={{ duration: 0.5, delay: 0.3 }}
                                             >
                                                 <div className="flex justify-between border-b-2 border-black border-opacity-50 pb-3 mb-4 font-semibold lg:text-base md:text-sm sm:text-base text-sm text-black/80">
-                                                    <span>{new Date(data.startDate).toLocaleDateString(undefined, { year: 'numeric' }) + " - " + new Date(data.endDate).toLocaleDateString(undefined, { year: 'numeric' })}</span>
+                                                    <span>{new Date(data.startDate).toLocaleDateString(undefined, { year: 'numeric' }) + " - " + (data.endDate === null ? "Present" : new Date(data.endDate).toLocaleDateString(undefined, { year: 'numeric' }))}</span>
                                                     <span className="text-purple-700 font-semibold">{data.grade}</span>
                                                 </div>
                                                 <div className="">

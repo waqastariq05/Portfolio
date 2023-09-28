@@ -10,7 +10,7 @@ async function getSkills() {
         apiVersion: "2022-03-25",
         useCdn: false
     });
-    const query = `*[_type == "skills"]{name, percent, category}`
+    const query = `*[_type == "skills"] | order(_createdAt asc){name, percent, category}`
     const res = await client.fetch(query)
     return { res }
 }
@@ -23,7 +23,7 @@ async function getEducation() {
         apiVersion: "2022-03-25",
         useCdn: false
     });
-    const query = `*[_type == "education"]{instName, degree, major, grade, startDate, endDate}`
+    const query = `*[_type == "education"] | order(_createdAt asc){instName, degree, major, grade, startDate, endDate}`
     const res = await client.fetch(query)
     return { res }
 }
@@ -36,7 +36,7 @@ async function getCertificate() {
         apiVersion: "2022-03-25",
         useCdn: false
     });
-    const query = `*[_type == "certificate"]{name, instName, type, cerLink, date}`
+    const query = `*[_type == "certificate"] | order(_createdAt desc){name, instName, type, cerLink, date}`
     const res = await client.fetch(query)
     return { res }
 }
