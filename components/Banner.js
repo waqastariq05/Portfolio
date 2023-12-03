@@ -111,7 +111,6 @@ const Banner = (props) => {
         }
     }
 
-
     return (
         <>
             <div className='md:w-1/2 sm:w-1/2 sm:px-0 px-5 w-full relative'>

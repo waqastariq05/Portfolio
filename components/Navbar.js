@@ -73,13 +73,12 @@ const Navbar = () => {
 
     return (
 
-        <header className="">
+        <>
             <div className="container mx-auto flex flex-wrap items-center lg:justify-start justify-between py-3 md:px-20 sm:px-10 px-5">
                 <nav className="lg:flex lg:w-2/5 hidden flex-wrap items-center">
                     {navLink.map((nav, index) => {
                         return (
-                            <Link className={`text-base text-black capitalize font-bold hover:text-purple-700 
-                            transition-all duration-300 cursor-pointer p-1 mx-2 ${nav.link === pathname && "text-purple-700 border-b-2 border-purple-700"}`} aria-label={nav.name} href={nav.link} key={index}>{nav.name}  </Link>
+                            <Link className={`text-base capitalize font-bold hover:text-purple-700 border-b-2 transition-all duration-300 cursor-pointer p-1 mx-2 ${nav.link !== pathname ? "border-transparent text-black" : "text-purple-700 border-purple-700"}`} aria-label={nav.name} href={nav.link} key={index}>{nav.name}  </Link>
                         )
                     })}
                 </nav>
@@ -122,7 +121,7 @@ const Navbar = () => {
                     </div>
                 </nav>
             </div>
-        </header>
+        </>
     )
 }
 

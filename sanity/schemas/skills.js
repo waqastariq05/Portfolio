@@ -4,14 +4,10 @@ export default {
     title: 'Skills',
     fields: [
         {
-            name: 'name',
-            type: 'string',
-            title: 'Name'
-        },
-        {
-            name: 'percent',
-            type: 'number',
-            title: 'Percentage'
+            name: 'image',
+            type: 'image',
+            title: "Image",
+            options: { hotspot: true },
         },
         {
             name: 'category',

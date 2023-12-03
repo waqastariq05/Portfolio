@@ -12,6 +12,7 @@ import {
     faUser
 } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion'
+import SkillSection from './SkillSection'
 
 const About = (props) => {
     const { education, certificate, skills } = props
@@ -59,62 +60,7 @@ const About = (props) => {
 
             {/* ======================= Skills ==============-================= */}
             <Header title="Skills" text="Skills And Tools, That I Have Learn" />
-            <div className="lg:px-10 px-0 mt-5 md:mb-16 sm:mb-12 mb-10">
-                <div className="grid md:grid-cols-2 md:grid-flow-col grid-flow-row md:gap-7 gap-5">
-                    <div>
-                        <motion.h2 className='text-black font-bold lg:text-3xl md:text-2xl sm:text-3xl text-2xl capitalize sm:mb-7 mb-5 mx-auto'
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.2 }}
-                        >Development</motion.h2>
-                        {skills.filter(e => { return e.category === 'web' }).map((skill, i) => {
-                            return (
-                                <div className='lg:mb-6 md:mb-5 mb-6 sm:mx-3 mx-0' key={i}>
-                                    <motion.div className='flex justify-between' style={{ width: `${skill.percent}%` }}
-                                        initial={{ opacity: 0 }}
-                                        whileInView={{ opacity: 1 }}
-                                        transition={{ duration: 0.5, delay: 0.5 }}
-                                    >
-                                        <h2 className="lg:text-base md:text-sm text-base text-black font-semibold mb-2 sm:pl-2">{skill.name}</h2>
-                                        <h2 className="lg:text-base md:text-sm text-base text-black font-semibold mb-2 relative -right-5">{skill.percent}%</h2>
-                                    </motion.div>
-                                    <div className='h-2 w-full bg-slate-300 rounded-md relative'><motion.span className='absolute h-2 bg-purple-700 rounded-md' style={{ width: `${skill.percent}%` }}
-                                        initial={{ opacity: 0, width: 0 }}
-                                        whileInView={{ opacity: 1, width: `${skill.percent}%` }}
-                                        transition={{ duration: 0.5, delay: 0.4 }}
-                                    ></motion.span></div>
-                                </div>
-                            )
-                        })}
-                    </div>
-                    <div>
-                        <motion.h2 className='text-black font-bold lg:text-3xl md:text-2xl sm:text-3xl text-2xl capitalize sm:mb-7 mb-5 mx-auto'
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.2 }}
-                        >Blockchain</motion.h2>
-                        {skills.filter(e => { return e.category === 'blockchain' }).map((skill, i) => {
-                            return (
-                                <div className="lg:mb-6 md:mb-5 mb-6 sm:mx-3 mx-0" key={i}>
-                                    <motion.div className='flex justify-between' style={{ width: `${skill.percent}%` }}
-                                        initial={{ opacity: 0 }}
-                                        whileInView={{ opacity: 1 }}
-                                        transition={{ duration: 0.5, delay: 0.5 }}
-                                    >
-                                        <h2 className="lg:text-base md:text-sm text-base text-black font-semibold mb-2 sm:pl-2">{skill.name}</h2>
-                                        <h2 className="lg:text-base md:text-sm text-base text-black font-semibold mb-2 relative -right-5">{skill.percent}%</h2>
-                                    </motion.div>
-                                    <div className='h-2 w-full bg-slate-300 rounded-md relative'><motion.span className='absolute h-2 bg-purple-700 rounded-md' style={{ width: `${skill.percent}%` }}
-                                        initial={{ opacity: 0, width: 0 }}
-                                        whileInView={{ opacity: 1, width: `${skill.percent}%` }}
-                                        transition={{ duration: 0.5, delay: 0.4 }}
-                                    ></motion.span></div>
-                                </div>
-                            )
-                        })}
-                    </div>
-                </div>
-            </div>
+            <SkillSection skills={skills} />
 
             <Header title="Resume" text="Education & Certifications, that i have earned" />
             <div className="flex mx-auto flex-col lg:px-10 px-0 mt-5">
@@ -125,7 +71,7 @@ const About = (props) => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
                         >Education</motion.h2>
-                        {/* ======================= Educations ================================= */}
+                        {/* =================== Educations ============================== */}
                         <div className="flex flex-col items-center justify-center">
                             {education.map((data, i) => {
                                 return (
@@ -164,7 +110,7 @@ const About = (props) => {
                         </div>
                     </div>
 
-                    {/* ======================= Certification ================================= */}
+                    {/* ===================== Certification =========================== */}
                     <div>
                         <motion.h2 className='text-black font-bold lg:text-3xl md:text-2xl sm:text-3xl text-2xl capitalize sm:mb-8 mb-5 mx-auto'
                             initial={{ opacity: 0, y: 20 }}

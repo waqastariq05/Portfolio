@@ -10,7 +10,10 @@ async function getSkills() {
         apiVersion: "2022-03-25",
         useCdn: false
     });
-    const query = `*[_type == "skills"] | order(_createdAt asc){name, percent, category}`
+    const query = `*[_type == "skills"] | order(_createdAt asc){
+        heading,
+        "image": image.asset->url,
+        category}`
     const res = await client.fetch(query)
     return { res }
 }
