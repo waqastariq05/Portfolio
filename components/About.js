@@ -65,13 +65,13 @@ const About = (props) => {
             <Header title="Resume" text="Education & Certifications, that i have earned" />
             <div className="flex mx-auto flex-col lg:px-10 px-0 mt-5">
                 <div className='grid md:grid-cols-2 md:grid-flow-col grid-flow-row md:gap-16 gap-10 md:mb-10'>
+                    {/* =================== Educations ============================== */}
                     <div>
-                        <motion.h2 className='text-black font-bold lg:text-3xl md:text-2xl sm:text-3xl text-2xl capitalize sm:mb-8 mb-5'
+                        <motion.h2 className='text-black font-bold lg:text-3xl md:text-2xl sm:text-3xl text-2xl capitalize sm:mb-8 mb-5 relative after:bg-purple-600 after:w-10 sm:after:w-12 after:h-1 after:rounded-md after:absolute after:top-[50%] after:-translate-y-[50%] after:ml-2'
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
                         >Education</motion.h2>
-                        {/* =================== Educations ============================== */}
                         <div className="flex flex-col items-center justify-center">
                             {education.map((data, i) => {
                                 return (
@@ -112,7 +112,7 @@ const About = (props) => {
 
                     {/* ===================== Certification =========================== */}
                     <div>
-                        <motion.h2 className='text-black font-bold lg:text-3xl md:text-2xl sm:text-3xl text-2xl capitalize sm:mb-8 mb-5 mx-auto'
+                        <motion.h2 className='text-black font-bold lg:text-3xl md:text-2xl sm:text-3xl text-2xl capitalize sm:mb-8 mb-5 mx-auto relative after:bg-purple-600 after:w-10 sm:after:w-12 after:h-1 after:rounded-md after:absolute after:top-[50%] after:-translate-y-[50%] after:ml-2'
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
