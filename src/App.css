@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700;800&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat";
+    background-color: #0e1630;
+}
+
+/* Custom Scrollbar ==========================*/
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(45deg, #fd481d 0%, #F09819 51%, #fd481d 100%);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #fd481d;
+}
+
+/* Custom Button ==========================*/
+.btn {
+    margin: 10px;
+    padding: 15px 35px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
+    border: 0px;
+    font-weight: 700;
+    background-image: linear-gradient(45deg, #fd481d 0%, #F09819 51%, #fd481d 100%);
+    cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;
+    letter-spacing: 0.025em;
+}
+
+.btn:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Project Section Animaton =============================== */
+.project-items.hide {
+    display: none;
+}
+
+.project-items.show {
+    display: block;
+    animation: showItem 0.5s ease;
+}
+
+@keyframes showItem {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
