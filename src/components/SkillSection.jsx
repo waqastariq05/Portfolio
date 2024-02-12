@@ -1,5 +1,5 @@
 import React from 'react'
-import SubTitleSection from './subTitleSection'
+import SubTitleSection from './SubTitleSection'
 
 // Skill Images =================
 import html from '../assets/skills/html.png'

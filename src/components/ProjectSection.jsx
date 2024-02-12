@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import SubTitleSection from './subTitleSection'
+import SubTitleSection from './SubTitleSection'
 import Card from './Card'
 import NavTabs from './NavTabs'
 import ProjectViewVideo from './ProjectViewVideo'
