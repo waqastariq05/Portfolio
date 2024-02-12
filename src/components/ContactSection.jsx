@@ -1,5 +1,5 @@
 import React from 'react'
-import SubTitleSection from './subTitleSection'
+import SubTitleSection from './SubTitleSection'
 import { Phone, Mail, MapPin, Send } from 'lucide-react'
 
 const ContactSection = () => {
