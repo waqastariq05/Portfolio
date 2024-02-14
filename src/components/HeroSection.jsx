@@ -60,7 +60,7 @@ const HeroSection = () => {
 
             </div>
             {/* -- Social Media icons */}
-            <div div className='absolute right-7 top-[40%] sm:right-10 md:top-auto flex flex-col gap-7' >
+            <div className='absolute right-7 top-[40%] sm:right-10 md:top-auto flex flex-col gap-7' >
                 <a href="https://www.linkedin.com/in/waqas-tariq-705a671bb/"><Linkedin size={22} className='cursor-pointer text-white/90 hover:text-textOrange transition-all duration-200 hover:scale-125' /></a>
                 <a href="https://github.com/waqastariq05"><Github size={22} className='cursor-pointer text-white/90 hover:text-textOrange transition-all duration-200 hover:scale-125' /></a>
                 <a href="https://www.facebook.com/waqas.tariq05"><Facebook size={22} className='cursor-pointer text-white/90 hover:text-textOrange transition-all duration-200 hover:scale-125' /></a>
