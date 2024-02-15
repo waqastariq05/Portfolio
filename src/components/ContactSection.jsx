@@ -26,7 +26,7 @@ const ContactSection = ({ setAlert, setAlertData }) => {
   }
 
   return (
-    <div id='contact' className='w-full md:w-[90%] mx-auto pt-10 mb-16 sm:mb-20 px-5 md:px-0'>
+    <div id='contact' className='w-full md:w-[90%] mx-auto pt-10 mb-16 sm:mb-20 px-5 md:px-0 section'>
       <SubTitleSection title="Contact" text="Let’s talk for your next projects" />
       <div className="sm:px-10 flex md:flex-nowrap flex-wrap">
         <div className="w-full lg:w-1/3 md:w-1/2 sm:mr-10 mt-2 sm:mt-7">

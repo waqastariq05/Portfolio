@@ -22,7 +22,7 @@ const HeroSection = () => {
     }, []);
 
     return (
-        <div className='w-full md:w-[85%] grid grid-flow-row md:grid-cols-2 items-center md:gap-5 mx-auto md:h-screen mb-16 md:mb-0' id='home'>
+        <div className='w-full md:w-[85%] grid grid-flow-row md:grid-cols-2 items-center md:gap-5 mx-auto md:h-screen mb-16 md:mb-0 section' id='home'>
             {/* -- Left Section (text) */}
             <div className='pt-5 order-2 md:order-none px-5 md:px-0 md:pt-10'>
                 <div className='whileInView-bounce text-sm font-semibold capitalize text-white bg-black tracking-wide rounded-md sm:py-2 py-3 px-5 w-28 text-center relative md:mb-5 mb-4 animate-bounce delay-100'>
@@ -36,7 +36,7 @@ const HeroSection = () => {
                 <p className='text-white/80 lg:text-base text-sm font-normal mb-10 sm:mb-14 lg:w-[85%]'>Over 1 year of practical experience with a good knowledge in Full Stack development.</p>
                 <div className='flex flex-wrap items-center gap-5 sm:gap-3'>
                     <a href="#project" className='btn w-full sm:w-auto m-0 lg:m-[10px] text-sm sm:text-base'>Projects</a>
-                    <a href="./resume.pdf" target='_blank' className='px-[25px] py-[14px] text-center w-full sm:w-auto text-sm sm:text-base font-semibold rounded-[10px] uppercase tracking-wide border-2 text-white border-white hover:text-black hover:bg-white transition-all duration-300'>Download CV</a>
+                    <a href="./Waqas_Tariq_Resume.pdf" target='_blank' className='px-[25px] py-[14px] text-center w-full sm:w-auto text-sm sm:text-base font-semibold rounded-[10px] uppercase tracking-wide border-2 text-white border-white hover:text-black hover:bg-white transition-all duration-300'>Download CV</a>
                 </div>
             </div>
             {/* -- right Section (img) */}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 
-const Navbar = () => {
+const Navbar = ({ activeSection }) => {
     const [toggle, setToggle] = useState(false)
 
     const handleToggle = () => {
@@ -11,6 +11,7 @@ const Navbar = () => {
     const handleClick = () => {
         window.location.href = "#contact"
     }
+
 
     return (
         <div className='bg-[#0e1630] fixed top-0 left-0 right-0 w-full px-5 py-[14px] md:py-1 flex items-center justify-between mx-auto z-10 md:px-10 lg:px-16 border-b-2 border-cardBGColor'>
@@ -25,13 +26,13 @@ const Navbar = () => {
             </div>
             <nav className={`${!toggle ? "-translate-x-[100%]" : "-translate-x-0"} transition-all duration-300 py-5 bg-cardBGColor/50 backdrop-blur-md z-10 shadow-md absolute left-0 right-0 top-[70px] md:bg-transparent h-screen md:h-auto md:static md:py-0 md:-translate-x-0 md:shadow-none`}>
                 <ul className={`flex flex-col items-center h-[80%] md:h-auto justify-center md:flex-row gap-7`}>
-                    <li><a href="#home" className="text-white text-base font-bold uppercase tracking-wide hover:text-textOrange transition-all duration-300" onClick={handleToggle}>Home</a>
+                    <li><a href="#home" className={`${activeSection === 'home' ? 'active' : ""} text-white text-base font-bold uppercase tracking-wide hover:text-textOrange transition-all duration-300`} onClick={handleToggle}>Home</a>
                     </li>
-                    <li><a href="#skill" className='text-white text-base font-bold uppercase tracking-wide hover:text-textOrange transition-all duration-300' onClick={handleToggle}>Skills</a>
+                    <li><a href="#skill" className={`${activeSection === 'skill' ? 'active' : ""} text-white text-base font-bold uppercase tracking-wide hover:text-textOrange transition-all duration-300`} onClick={handleToggle}>Skills</a>
                     </li>
-                    <li><a href="#project" className='text-white text-base font-bold uppercase tracking-wide hover:text-textOrange transition-all duration-300' onClick={handleToggle}>Projects</a>
+                    <li><a href="#project" className={`${activeSection === 'project' ? 'active' : ""} text-white text-base font-bold uppercase tracking-wide hover:text-textOrange transition-all duration-300 nav_link`} onClick={handleToggle}>Projects</a>
                     </li>
-                    <li><a href="#contact" className='text-white text-base font-bold uppercase tracking-wide hover:text-textOrange transition-all duration-300' onClick={handleToggle}>Contact</a>
+                    <li><a href="#contact" className={`${activeSection === 'contact' ? 'active' : ""} text-white text-base font-bold uppercase tracking-wide hover:text-textOrange transition-all duration-300 nav_link`} onClick={handleToggle}>Contact</a>
                     </li>
                     <li className='block mt-5 md:hidden'>
                         <button onClick={handleClick} className='btn text-sm sm:text-base tracking-wide rounded-full px-20 border-0'>Hire Me</button>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const tabs = ["MERN", "Landing Page", "UI & UX"]
+const tabs = ["All", "Full Stack", "Web 3", "Front End"]
 
 const NavTabs = ({ handleClick }) => {
     const [navActive, setNavActive] = useState(0)

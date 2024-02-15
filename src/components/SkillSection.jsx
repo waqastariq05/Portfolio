@@ -18,6 +18,11 @@ import next from '../assets/skills/next.png'
 import github from '../assets/skills/github.png'
 import figma from '../assets/skills/figma.png'
 import restapi from '../assets/skills/restapi.png'
+import solidity from '../assets/skills/solidity.png'
+import truffle from '../assets/skills/truffle.png'
+import ganache from '../assets/skills/ganache.png'
+import metamask from '../assets/skills/metamask.png'
+import ipfs from '../assets/skills/ipfs.png'
 
 const SkillSection = () => {
     const skills = [
@@ -34,13 +39,18 @@ const SkillSection = () => {
         { image: redux, name: "Redux" },
         { image: tailwind, name: "TailwindCSS" },
         { image: next, name: "Next JS" },
+        { image: solidity, name: "Solidity" },
+        { image: truffle, name: "Truffle" },
+        { image: ganache, name: "Ganache" },
+        { image: metamask, name: "MetaMask" },
+        { image: ipfs, name: "IPFS" },
         { image: postgre, name: "PostgreSQL" },
         { image: redis, name: "Redis" },
         { image: figma, name: "Figma" },
     ]
 
     return (
-        <div className='w-full md:w-[90%] mx-auto pt-10 mb-16 sm:mb-20 px-5 md:px-0' id='skill'>
+        <div className='w-full md:w-[90%] mx-auto pt-10 mb-16 sm:mb-20 px-5 md:px-0 section' id='skill'>
             <SubTitleSection title="Skills" text="Let’s explore popular skills & experience" />
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 items-center justify-between sm:justify-start gap-5 md:gap-7 px-0 sm:px-10">
                 {skills.map((skill, i) => {

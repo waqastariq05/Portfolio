@@ -9,6 +9,10 @@ body {
     background-color: #0e1630;
 }
 
+a.active {
+    color: #fd481d;
+}
+
 /* Custom Scrollbar ==========================*/
 ::-webkit-scrollbar {
     width: 6px;
