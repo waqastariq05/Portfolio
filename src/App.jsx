@@ -12,12 +12,12 @@ function App() {
   const [alert, setAlert] = useState(false)
   const [alertData, setAlertData] = useState({ type: "", msg: "" })
 
-  const [activeSection, setActiveSection] = useState(null);
   const sections = useRef([]);
 
   const handleScroll = () => {
+    const navLink = document.querySelectorAll(".nav_link")
     const pageYOffset = window.scrollY;
-    let newActiveSection = null;
+    let newActiveSection = 'home';
 
     sections.current.forEach((section) => {
       const sectionOffsetTop = section.offsetTop;
@@ -28,7 +28,12 @@ function App() {
       }
     });
 
-    setActiveSection(newActiveSection);
+    navLink.forEach(link => {
+      if (link.href.includes(newActiveSection)) {
+        document.querySelector(".active").classList.remove("active")
+        link.classList.add("active")
+      }
+    })
   };
 
   useEffect(() => {
@@ -42,7 +47,7 @@ function App() {
 
   return (
     <>
-      <Navbar activeSection={activeSection} />
+      <Navbar />
       {alert && <Alert alertData={alertData} setAlert={setAlert} setAlertData={setAlertData} />}
       <HeroSection />
       <SkillSection />
